@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".questions.QuestionsGroupTwoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/test_page_two_question_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/test_page_two_answer_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/answer"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"/>
+
+        <TextView
+            android:id="@+id/test_page_two_question_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <RadioGroup
+            android:id="@+id/test_page_two_choices_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            >
+            <RadioButton
+                android:id="@+id/test_page_two_choices_two_ans_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You depend on fraud and deception."
+                android:textColor="@color/black"/>
+            <RadioButton
+                android:id="@+id/test_page_one_choices_two_ans_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You depend on yourself."
+                android:textColor="@color/black"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/test_page_two_question_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/test_page_two_answer_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/answer"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"/>
+
+
+
+        <TextView
+            android:id="@+id/test_page_two_question_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <RadioGroup
+            android:id="@+id/test_page_two_choices_four"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            >
+            <RadioButton
+                android:id="@+id/test_page_two_choices_four_ans_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You are punishing yourself."
+                android:textColor="@color/black"/>
+            <RadioButton
+                android:id="@+id/test_page_two_choices_four_ans_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You never punish yourself."
+                android:textColor="@color/black"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/test_page_two_question_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/test_page_two_answer_five"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/answer"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"/>
+
+    </LinearLayout>
+
+</ScrollView>

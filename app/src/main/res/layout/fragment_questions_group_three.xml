@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".questions.QuestionsGroupThreeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/test_page_three_question_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+        <RadioGroup
+            android:id="@+id/test_page_three_choices_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            >
+            <RadioButton
+                android:id="@+id/test_page_three_choices_one_ans_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You suspect he/she is helping you, and you reject him/her."
+                android:textColor="@color/black"/>
+            <RadioButton
+                android:id="@+id/test_page_three_choices_one_ans_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You welcome his/her help to you and accept it."
+                android:textColor="@color/black"/>
+
+        </RadioGroup>
+        <TextView
+            android:id="@+id/test_page_three_question_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+        <RadioGroup
+            android:id="@+id/test_page_three_choices_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            >
+            <RadioButton
+                android:id="@+id/test_page_three_choices_two_ans_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You accuse others of what they didn't do."
+                android:textColor="@color/black"/>
+            <RadioButton
+                android:id="@+id/test_page_three_choices_two_ans_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quietly withdraw from the debate."
+                android:textColor="@color/black"/>
+
+        </RadioGroup>
+
+
+
+        <TextView
+            android:id="@+id/test_page_three_question_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/test_page_three_answer_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/answer"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"/>
+
+        <TextView
+            android:id="@+id/test_page_three_question_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+        <RadioGroup
+            android:id="@+id/test_page_three_choices_four"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            >
+            <RadioButton
+                android:id="@+id/test_page_three_choices_four_ans_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Details of the painting."
+                android:textColor="@color/black"/>
+            <RadioButton
+                android:id="@+id/test_page_three_choices_four_ans_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Only visible things."
+                android:textColor="@color/black"/>
+
+        </RadioGroup>
+
+
+
+        <TextView
+            android:id="@+id/test_page_three_question_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/test_page_three_answer_five"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/answer"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"/>
+    </LinearLayout>
+
+</ScrollView>

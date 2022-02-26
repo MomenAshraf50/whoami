@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".questions.QuestionsGroupFiveFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/test_page_five_question_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+        <RadioGroup
+            android:id="@+id/test_page_five_choices_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            >
+            <RadioButton
+                android:id="@+id/test_page_five_choices_one_ans_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You feel overreacting."
+                android:textColor="@color/black"/>
+            <RadioButton
+                android:id="@+id/test_page_five_choices_one_ans_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You feel like you deserve it."
+                android:textColor="@color/black"/>
+
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/test_page_five_question_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/test_page_five_answer_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/answer"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"/>
+
+        <TextView
+            android:id="@+id/test_page_five_question_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <RadioGroup
+            android:id="@+id/test_page_five_choices_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            >
+            <RadioButton
+                android:id="@+id/test_page_five_choices_three_ans_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter a new relationship and move on."
+                android:textColor="@color/black"/>
+            <RadioButton
+                android:id="@+id/test_page_five_choices_three_ans_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You get memories back and try to get back to the same person."
+                android:textColor="@color/black"/>
+        </RadioGroup>
+
+
+
+        <TextView
+            android:id="@+id/test_page_five_question_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/test_page_five_answer_four"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/answer"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"/>
+
+        <TextView
+            android:id="@+id/test_page_five_question_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <RadioGroup
+            android:id="@+id/test_page_five_choices_five"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            >
+            <RadioButton
+                android:id="@+id/test_page_five_choices_five_ans_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You think about everything around you."
+                android:textColor="@color/black"/>
+            <RadioButton
+                android:id="@+id/test_page_five_choices_five_ans_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You only care about the most important things."
+                android:textColor="@color/black"/>
+        </RadioGroup>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Who am I</string>
+    <string name="hello">Hello!</string>
+    <string name="quick_brief_about_our_app">Quick brief about our App</string>
+    <string name="app_intro">app intro</string>
+    <string name="more_info">More Info</string>
+    <string name="start_the_test">Start the test</string>
+    <string name="personalities_information">Personalities Information</string>
+    <string name="psychopathic_personality">Psychopathic Personality</string>
+    <string name="personality_info">personality info</string>
+    <string name="personality_name">Personality Name</string>
+    <string name="personality_characteristics">Personality Characteristics</string>
+    <string name="_1">1.</string>
+    <string name="_2">2.</string>
+    <string name="_3">3.</string>
+    <string name="_4">4.</string>
+    <string name="_5">5.</string>
+    <string name="_6">6.</string>
+    <string name="welcome_to_whoami_app">Welcome to WhoAmI App!</string>
+    <string name="personality_formation_factors">Personality Formation Factors: </string>
+    <string name="heredity_factor">1.Heredity factor: </string>
+    <string name="environment">2.Environment: </string>
+    <string name="family_background">3.Family background: </string>
+    <string name="intelligence">4.Intelligence: </string>
+    <string name="culture">5.Culture: </string>
+    <string name="the_body">6.The Body: </string>
+    <string name="mood">7.Mood: </string>
+    <string name="more_information">More Information</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="who_am_i">Who Am I</string>
+    <string name="welcome_to_our_app_slide_to_know_more">Welcome to our App slide to know more.</string>
+    <string name="welcome_to_our_app">Welcome to our App!</string>
+    <string name="slide_to_know_more_about_our_app">Slide to know more about our App.</string>
+    <string name="question">Question</string>
+    <string name="answer">Answer</string>
+</resources>
