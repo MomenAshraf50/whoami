@@ -6,15 +6,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".TestActivity">
 
-    <com.google.android.material.tabs.TabLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabMode="scrollable"
-        android:id="@+id/test_tab_layout"/>
-    <androidx.viewpager2.widget.ViewPager2
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/test_tab_layout"
-        android:id="@+id/test_view_pager"/>
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_controller"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="132dp"
+        tools:ignore="MissingConstraints" />
 
 </RelativeLayout>

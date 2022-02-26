@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_controller"
+    app:startDestination="@id/questionsGroupOneFragment">
+
+    <fragment
+        android:id="@+id/questionsGroupOneFragment"
+        android:name="com.example.whoami.questions.QuestionsGroupOneFragment"
+        android:label="fragment_questions_group_one"
+        tools:layout="@layout/fragment_questions_group_one" >
+        <action
+            android:id="@+id/action_questionsGroupOneFragment_to_questionsGroupTwoFragment"
+            app:destination="@id/questionsGroupTwoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsGroupTwoFragment"
+        android:name="com.example.whoami.questions.QuestionsGroupTwoFragment"
+        android:label="fragment_questions_group_two"
+        tools:layout="@layout/fragment_questions_group_two" >
+        <action
+            android:id="@+id/action_questionsGroupTwoFragment_to_questionsGroupThreeFragment"
+            app:destination="@id/questionsGroupThreeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsGroupThreeFragment"
+        android:name="com.example.whoami.questions.QuestionsGroupThreeFragment"
+        android:label="fragment_questions_group_three"
+        tools:layout="@layout/fragment_questions_group_three" >
+        <action
+            android:id="@+id/action_questionsGroupThreeFragment_to_questionsGroupFourFragment"
+            app:destination="@id/questionsGroupFourFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsGroupFourFragment"
+        android:name="com.example.whoami.questions.QuestionsGroupFourFragment"
+        android:label="fragment_questions_group_four"
+        tools:layout="@layout/fragment_questions_group_four" >
+        <action
+            android:id="@+id/action_questionsGroupFourFragment_to_questionsGroupFiveFragment"
+            app:destination="@id/questionsGroupFiveFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsGroupFiveFragment"
+        android:name="com.example.whoami.questions.QuestionsGroupFiveFragment"
+        android:label="fragment_questions_group_five"
+        tools:layout="@layout/fragment_questions_group_five">
+        <action
+            android:id="@+id/action_questionsGroupFiveFragment_to_questionsGroupSixFragment"
+            app:destination="@id/questionsGroupSixFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsGroupSixFragment"
+        android:name="com.example.whoami.questions.QuestionsGroupSixFragment"
+        android:label="fragment_questions_group_six"
+        tools:layout="@layout/fragment_questions_group_six" >
+        <action
+            android:id="@+id/action_questionsGroupSixFragment_to_questionsGroupSevenFragment"
+            app:destination="@id/questionsGroupSevenFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsGroupSevenFragment"
+        android:name="com.example.whoami.questions.QuestionsGroupSevenFragment"
+        android:label="fragment_questions_group_seven"
+        tools:layout="@layout/fragment_questions_group_seven" />
+</navigation>

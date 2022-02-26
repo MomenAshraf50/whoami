@@ -10,16 +10,16 @@ import com.google.android.material.tabs.TabLayout;
 
 public class TestActivity extends AppCompatActivity {
 
-    TabLayout tabLayout;
-    ViewPager2 viewPager2;
-    TestTapsAdapter testTapsAdapter;
+    //TabLayout tabLayout;
+    //ViewPager2 viewPager2;
+    //TestTapsAdapter testTapsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        tabLayout = findViewById(R.id.test_tab_layout);
+        /*tabLayout = findViewById(R.id.test_tab_layout);
         viewPager2 = findViewById(R.id.test_view_pager);
         FragmentManager fragmentManager = getSupportFragmentManager();
         testTapsAdapter = new TestTapsAdapter(fragmentManager,getLifecycle());
@@ -54,7 +54,7 @@ public class TestActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 tabLayout.selectTab(tabLayout.getTabAt(position));
             }
-        });
+        });*/
 
     }
 }
