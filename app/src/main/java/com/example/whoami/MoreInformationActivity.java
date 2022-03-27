@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 
+import com.example.whoami.adapters.MoreInfoTabsAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 

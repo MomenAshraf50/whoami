@@ -43,7 +43,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/dots_indicator"
                 android:orientation="horizontal"
-                android:weightSum="2">
+                android:weightSum="2"
+                android:id="@+id/main_activity_linear_layout">
                 <Button
                     android:id="@+id/main_activity_btn_more_info"
                     android:layout_width="0dp"
@@ -53,8 +54,9 @@
                     android:textAllCaps="false"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:layout_marginStart="@dimen/_30sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
                     android:visibility="gone"
+
                     />
 
                 <Button
@@ -64,10 +66,11 @@
                     android:layout_weight="1"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:layout_marginEnd="@dimen/_30sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_7sdp"
                     android:text="@string/start_the_test"
                     android:textAllCaps="false"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    />
             </LinearLayout>
 
 

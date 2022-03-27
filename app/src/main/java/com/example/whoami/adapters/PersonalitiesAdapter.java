@@ -1,4 +1,4 @@
-package com.example.whoami;
+package com.example.whoami.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.whoami.PersonalityDetails;
+import com.example.whoami.PersonalityViewActivity;
+import com.example.whoami.R;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.List;
 
@@ -35,11 +40,10 @@ public class PersonalitiesAdapter extends RecyclerView.Adapter<PersonalitiesAdap
         PersonalityDetails details = list.get(position);
         holder.personalityImage.setImageResource(details.getImagePath());
         holder.textViewName.setText(details.getPersonalityName());
-        holder.textViewInfo.setText(details.getPersonalityInfo());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context,PersonalityViewActivity.class);
+                Intent intent = new Intent(context, PersonalityViewActivity.class);
                 intent.putExtra("personalityImage",details.getImagePath());
                 intent.putExtra("personalityInfo",details.getPersonalityInfo());
                 intent.putExtra("personalityName",details.getPersonalityName());
@@ -50,6 +54,8 @@ public class PersonalitiesAdapter extends RecyclerView.Adapter<PersonalitiesAdap
                 intent.putExtra("PersonalityCharacteristicFive",details.getPersonalityCharacteristicFive());
                 intent.putExtra("PersonalityCharacteristicSix",details.getPersonalityCharacteristicSix());
                 context.startActivity(intent);
+
+
             }
         });
     }
@@ -66,8 +72,9 @@ public class PersonalitiesAdapter extends RecyclerView.Adapter<PersonalitiesAdap
             super(itemView);
             personalityImage = itemView.findViewById(R.id.card_view_iv);
             textViewName = itemView.findViewById(R.id.personality_name);
-            textViewInfo = itemView.findViewById(R.id.personality_info);
+            //textViewInfo = itemView.findViewById(R.id.personality_info);
 
         }
     }
+
 }

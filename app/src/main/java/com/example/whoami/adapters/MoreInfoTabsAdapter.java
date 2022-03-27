@@ -1,10 +1,13 @@
-package com.example.whoami;
+package com.example.whoami.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import com.example.whoami.PersonalitiesFactorsFragment;
+import com.example.whoami.PersonalitiesFragment;
 
 import org.jetbrains.annotations.NotNull;
 

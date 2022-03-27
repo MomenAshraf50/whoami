@@ -5,14 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="@dimen/_120sdp"
-        android:layout_height="@dimen/_120sdp"
+        android:layout_width="@dimen/_160sdp"
+        android:layout_height="@dimen/_160sdp"
         android:src="@drawable/whoami"
         android:id="@+id/circle_image_view"
         app:civ_border_color="@color/white"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/_100sdp"
-        app:civ_border_width="@dimen/_1sdp"/>
+        android:layout_marginTop="@dimen/_60sdp"
+        />
 
     <TextView
         android:id="@+id/slider_tv_head"

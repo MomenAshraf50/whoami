@@ -96,13 +96,13 @@ public class PersonalitiesFactorsFragment extends Fragment {
         factorSeven = "It is an important element in the formation of personality. It affects the human psyche clearly in the behavior. The mood of the individual may be impulsive and dominant as inherited or emotional traits acquired from those around him.";
     }
     public void setData(){
-        textViewFormationFactors.append(formationFactors);
-        textViewFactorOne.append(factorOne);
-        textViewFactorTwo.append(factorTwo);
-        textViewFactorThree.append(factorThree);
-        textViewFactorFour.append(factorFour);
-        textViewFactorFive.append(factorFive);
-        textViewFactorSix.append(factorSix);
-        textViewFactorSeven.append(factorSeven);
+        textViewFormationFactors.setText(formationFactors);
+        textViewFactorOne.setText(factorOne);
+        textViewFactorTwo.setText(factorTwo);
+        textViewFactorThree.setText(factorThree);
+        textViewFactorFour.setText(factorFour);
+        textViewFactorFive.setText(factorFive);
+        textViewFactorSix.setText(factorSix);
+        textViewFactorSeven.setText(factorSeven);
     }
 }

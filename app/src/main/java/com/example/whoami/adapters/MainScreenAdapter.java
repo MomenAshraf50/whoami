@@ -1,4 +1,4 @@
-package com.example.whoami;
+package com.example.whoami.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,12 +10,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.example.whoami.R;
+
 import org.jetbrains.annotations.NotNull;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
-public class ViewPagerAdapter extends PagerAdapter {
+public class MainScreenAdapter extends PagerAdapter {
     Context context;
     LayoutInflater layoutInflater;
 
@@ -27,7 +29,7 @@ public class ViewPagerAdapter extends PagerAdapter {
             ,"In this application, we will ask you 33 questions in order to get to know your personality through these questions."
             ,"but before that you should know the factors affecting all the characters. If you are interested click on more info button."};
 
-    public ViewPagerAdapter(Context context) {
+    public MainScreenAdapter(Context context) {
         this.context = context;
     }
 

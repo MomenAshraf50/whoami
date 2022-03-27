@@ -17,7 +17,7 @@
     <string name="_5">5.</string>
     <string name="_6">6.</string>
     <string name="welcome_to_whoami_app">Welcome to WhoAmI App!</string>
-    <string name="personality_formation_factors">Personality Formation Factors: </string>
+    <string name="personality_formation_factors">Personality Formation Factors </string>
     <string name="heredity_factor">1.Heredity factor: </string>
     <string name="environment">2.Environment: </string>
     <string name="family_background">3.Family background: </string>
@@ -34,4 +34,5 @@
     <string name="slide_to_know_more_about_our_app">Slide to know more about our App.</string>
     <string name="question">Question</string>
     <string name="answer">Answer</string>
+    <string name="info">Info</string>
 </resources>

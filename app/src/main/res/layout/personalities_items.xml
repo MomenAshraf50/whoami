@@ -33,22 +33,13 @@
                 android:textSize="@dimen/_13ssp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:layout_marginTop="@dimen/_6sdp"
-                android:layout_marginStart="@dimen/_6sdp"
-                />
-            <TextView
-                android:id="@+id/personality_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/personality_info"
-                android:textSize="@dimen/_13ssp"
-                android:textColor="@color/black"
-                android:layout_marginTop="@dimen/_6sdp"
-                android:layout_marginBottom="@dimen/_6sdp"
-                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:ellipsize="end"
                 android:maxLines="1"
                 />
+
 
         </LinearLayout>
 

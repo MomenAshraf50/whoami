@@ -1,7 +1,6 @@
 package com.example.whoami;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -10,10 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+import com.example.whoami.adapters.MainScreenAdapter;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
-import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator;
 
 public class MainActivity extends AppCompatActivity {
     Button buttonStartTheTest,buttonMoreInfo;
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     AnimationDrawable drawable;
     ViewPager viewPager;
     DotsIndicator dotsIndicator;
-    ViewPagerAdapter adapter;
+    MainScreenAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         drawable.setExitFadeDuration(1000);
         drawable.start();
 
-        adapter = new ViewPagerAdapter(MainActivity.this);
+        adapter = new MainScreenAdapter(MainActivity.this);
         viewPager.setAdapter(adapter);
         dotsIndicator.setViewPager(viewPager);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -52,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
                     case 2:
                         buttonMoreInfo.setVisibility(View.VISIBLE);
                         buttonStartTheTest.setVisibility(View.VISIBLE);
+                        YoYo.with(Techniques.FadeIn)
+                                .duration(1000)
+                                .playOn(findViewById(R.id.main_activity_linear_layout));
                         break;
                 }
 
