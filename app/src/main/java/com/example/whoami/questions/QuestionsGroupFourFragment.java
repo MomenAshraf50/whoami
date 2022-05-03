@@ -12,8 +12,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.example.whoami.R;
 import com.example.whoami.api.Four;
 import com.example.whoami.api.QuestionsResponse;
@@ -31,7 +36,11 @@ import retrofit2.Response;
 
 
 public class QuestionsGroupFourFragment extends Fragment {
-
+    RadioGroup radioGroupAnswerOne,radioGroupAnswerTwo,radioGroupAnswerThree,radioGroupAnswerFour
+            ,radioGroupAnswerFive;
+    RadioButton radioButtonAnswerOne,radioButtonAnswerTwo,radioButtonAnswerThree,radioButtonAnswerFour
+            ,radioButtonAnswerFive;
+    String answerOne,answerTwo,answerThree,answerFour,answerFive;
     FloatingActionButton pageFourButton;
     TextView textViewQuestionOne,textViewQuestionTwo,textViewQuestionThree,textViewQuestionFour
             ,textViewQuestionFive;
@@ -48,11 +57,9 @@ public class QuestionsGroupFourFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         NavController navController = Navigation.findNavController(view);
 
-        textViewQuestionOne = view.findViewById(R.id.test_page_four_question_one);
-        textViewQuestionTwo = view.findViewById(R.id.test_page_four_question_two);
-        textViewQuestionThree = view.findViewById(R.id.test_page_four_question_three);
-        textViewQuestionFour = view.findViewById(R.id.test_page_four_question_four);
-        textViewQuestionFive = view.findViewById(R.id.test_page_four_question_five);
+
+        inet(view);
+        animation(view);
 
 
         RetrofitClient.getService().getQuestions()
@@ -64,14 +71,20 @@ public class QuestionsGroupFourFragment extends Fragment {
                             List<Four> fourList =questionsResponse.get4();
                             Four one = fourList.get(0);
                             String questionOne = one.getQuestion();
+                            int questionOneId = one.getId();
                             Four two = fourList.get(1);
                             String questionTwo = two.getQuestion();
+                            int questionTwoId = two.getId();
                             Four three = fourList.get(2);
                             String questionThree = three.getQuestion();
+                            int questionThreeId = three.getId();
                             Four four = fourList.get(3);
                             String questionFour = four.getQuestion();
+                            int questionFourId = four.getId();
                             Four five = fourList.get(4);
                             String questionFive = five.getQuestion();
+                            int questionFiveId =five.getId();
+
                             textViewQuestionOne.setText(questionOne);
                             textViewQuestionTwo.setText(questionTwo);
                             textViewQuestionThree.setText(questionThree);
@@ -89,12 +102,66 @@ public class QuestionsGroupFourFragment extends Fragment {
                     }
                 });
 
-        pageFourButton = view.findViewById(R.id.test_page_four_floating_btn);
+
         pageFourButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int answerOneId = radioGroupAnswerOne.getCheckedRadioButtonId();
+                int answerTwoId = radioGroupAnswerTwo.getCheckedRadioButtonId();
+                int answerThreeId = radioGroupAnswerThree.getCheckedRadioButtonId();
+                int answerFourId = radioGroupAnswerFour.getCheckedRadioButtonId();
+                int answerFiveId = radioGroupAnswerFive.getCheckedRadioButtonId();
+
+                if (answerOneId==-1||answerTwoId==-1||answerThreeId==-1||answerFourId==-1
+                        ||answerFiveId==-1){
+                    Toast.makeText(getContext(), "Please, answer all Questions", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                radioButtonAnswerOne = view.findViewById(answerOneId);
+                radioButtonAnswerTwo = view.findViewById(answerTwoId);
+                radioButtonAnswerThree = view.findViewById(answerThreeId);
+                radioButtonAnswerFour = view.findViewById(answerFourId);
+                radioButtonAnswerFive = view.findViewById(answerFiveId);
+
+
+                answerOne =  radioButtonAnswerOne.getText().toString();
+                answerTwo =  radioButtonAnswerTwo.getText().toString();
+                answerThree =  radioButtonAnswerThree.getText().toString();
+                answerFour =  radioButtonAnswerFour.getText().toString();
+                answerFive =  radioButtonAnswerFive.getText().toString();
                 navController.navigate(R.id.action_questionsGroupFourFragment_to_questionsGroupFiveFragment);
             }
         });
     }
+    public void inet(View view){
+        pageFourButton = view.findViewById(R.id.test_page_four_floating_btn);
+        textViewQuestionOne = view.findViewById(R.id.test_page_four_question_one);
+        textViewQuestionTwo = view.findViewById(R.id.test_page_four_question_two);
+        textViewQuestionThree = view.findViewById(R.id.test_page_four_question_three);
+        textViewQuestionFour = view.findViewById(R.id.test_page_four_question_four);
+        textViewQuestionFive = view.findViewById(R.id.test_page_four_question_five);
+        radioGroupAnswerOne = view.findViewById(R.id.test_page_four_choices_one);
+        radioGroupAnswerTwo = view.findViewById(R.id.test_page_four_choices_two);
+        radioGroupAnswerThree = view.findViewById(R.id.test_page_four_choices_three);
+        radioGroupAnswerFour = view.findViewById(R.id.test_page_four_choices_four);
+        radioGroupAnswerFive = view.findViewById(R.id.test_page_four_choices_five);
+    }
+    public void animation(View view){
+        YoYo.with(Techniques.FadeIn)
+                .duration(1000)
+                .playOn(view.findViewById(R.id.test_page_four_question_one_card_view));
+        YoYo.with(Techniques.FadeIn)
+                .duration(1100)
+                .playOn(view.findViewById(R.id.test_page_four_question_two_card_view));
+        YoYo.with(Techniques.FadeIn)
+                .duration(1200)
+                .playOn(view.findViewById(R.id.test_page_four_question_three_card_view));
+        YoYo.with(Techniques.FadeIn)
+                .duration(1300)
+                .playOn(view.findViewById(R.id.test_page_four_question_four_card_view));
+        YoYo.with(Techniques.FadeIn)
+                .duration(1400)
+                .playOn(view.findViewById(R.id.test_page_four_question_five_card_view));
+    }
+
 }

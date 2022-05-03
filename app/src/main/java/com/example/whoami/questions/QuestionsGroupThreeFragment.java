@@ -12,8 +12,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.example.whoami.R;
 import com.example.whoami.api.QuestionsResponse;
 import com.example.whoami.api.RetrofitClient;
@@ -29,6 +34,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class QuestionsGroupThreeFragment extends Fragment {
+    RadioGroup radioGroupAnswerOne,radioGroupAnswerTwo,radioGroupAnswerThree,radioGroupAnswerFour
+            ,radioGroupAnswerFive;
+    RadioButton radioButtonAnswerOne,radioButtonAnswerTwo,radioButtonAnswerThree,radioButtonAnswerFour
+            ,radioButtonAnswerFive;
+    String answerOne,answerTwo,answerThree,answerFour,answerFive;
     TextView textViewQuestionOne,textViewQuestionTwo,textViewQuestionThree,textViewQuestionFour
             ,textViewQuestionFive;
     FloatingActionButton pageThreeButton;
@@ -45,11 +55,8 @@ public class QuestionsGroupThreeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         NavController navController = Navigation.findNavController(view);
 
-        textViewQuestionOne = view.findViewById(R.id.test_page_three_question_one);
-        textViewQuestionTwo = view.findViewById(R.id.test_page_three_question_two);
-        textViewQuestionThree = view.findViewById(R.id.test_page_three_question_three);
-        textViewQuestionFour = view.findViewById(R.id.test_page_three_question_four);
-        textViewQuestionFive = view.findViewById(R.id.test_page_three_question_five);
+        inet(view);
+        animation(view);
 
         RetrofitClient.getService().getQuestions()
                 .enqueue(new Callback<QuestionsResponse>() {
@@ -60,14 +67,20 @@ public class QuestionsGroupThreeFragment extends Fragment {
                             List<Three> threeList =questionsResponse.get3();
                             Three one = threeList.get(0);
                             String questionOne = one.getQuestion();
+                            int questionOneId = one.getId();
                             Three two = threeList.get(1);
                             String questionTwo = two.getQuestion();
+                            int questionTwoId = two.getId();
                             Three three = threeList.get(2);
                             String questionThree = three.getQuestion();
+                            int questionThreeId = three.getId();
                             Three four = threeList.get(3);
                             String questionFour = four.getQuestion();
+                            int questionFourId = four.getId();
                             Three five = threeList.get(4);
                             String questionFive = five.getQuestion();
+                            int questionFiveId = five.getId();
+
                             textViewQuestionOne.setText(questionOne);
                             textViewQuestionTwo.setText(questionTwo);
                             textViewQuestionThree.setText(questionThree);
@@ -85,12 +98,69 @@ public class QuestionsGroupThreeFragment extends Fragment {
                     }
                 });
 
-        pageThreeButton = view.findViewById(R.id.test_page_three_floating_btn);
+
         pageThreeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int answerOneId = radioGroupAnswerOne.getCheckedRadioButtonId();
+                int answerTwoId = radioGroupAnswerTwo.getCheckedRadioButtonId();
+                int answerThreeId = radioGroupAnswerThree.getCheckedRadioButtonId();
+                int answerFourId = radioGroupAnswerFour.getCheckedRadioButtonId();
+                int answerFiveId = radioGroupAnswerFive.getCheckedRadioButtonId();
+
+                if (answerOneId==-1||answerTwoId==-1||answerThreeId==-1||answerFourId==-1
+                        ||answerFiveId==-1){
+                    Toast.makeText(getContext(), "Please, answer all Questions", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                radioButtonAnswerOne = view.findViewById(answerOneId);
+                radioButtonAnswerTwo = view.findViewById(answerTwoId);
+                radioButtonAnswerThree = view.findViewById(answerThreeId);
+                radioButtonAnswerFour = view.findViewById(answerFourId);
+                radioButtonAnswerFive = view.findViewById(answerFiveId);
+
+
+                answerOne =  radioButtonAnswerOne.getText().toString();
+                answerTwo =  radioButtonAnswerTwo.getText().toString();
+                answerThree =  radioButtonAnswerThree.getText().toString();
+                answerFour =  radioButtonAnswerFour.getText().toString();
+                answerFive =  radioButtonAnswerFive.getText().toString();
+
                 navController.navigate(R.id.action_questionsGroupThreeFragment_to_questionsGroupFourFragment);
             }
         });
+    }
+    public void inet(View view){
+        pageThreeButton = view.findViewById(R.id.test_page_three_floating_btn);
+        textViewQuestionOne = view.findViewById(R.id.test_page_three_question_one);
+        textViewQuestionTwo = view.findViewById(R.id.test_page_three_question_two);
+        textViewQuestionThree = view.findViewById(R.id.test_page_three_question_three);
+        textViewQuestionFour = view.findViewById(R.id.test_page_three_question_four);
+        textViewQuestionFive = view.findViewById(R.id.test_page_three_question_five);
+        radioGroupAnswerOne = view.findViewById(R.id.test_page_three_choices_one);
+        radioGroupAnswerTwo = view.findViewById(R.id.test_page_three_choices_two);
+        radioGroupAnswerThree = view.findViewById(R.id.test_page_three_choices_three);
+        radioGroupAnswerFour = view.findViewById(R.id.test_page_three_choices_four);
+        radioGroupAnswerFive = view.findViewById(R.id.test_page_three_choices_five);
+
+
+
+    }
+    public void animation(View view){
+        YoYo.with(Techniques.FadeIn)
+                .duration(1000)
+                .playOn(view.findViewById(R.id.test_page_three_question_one_card_view));
+        YoYo.with(Techniques.FadeIn)
+                .duration(1100)
+                .playOn(view.findViewById(R.id.test_page_three_question_two_card_view));
+        YoYo.with(Techniques.FadeIn)
+                .duration(1200)
+                .playOn(view.findViewById(R.id.test_page_three_question_three_card_view));
+        YoYo.with(Techniques.FadeIn)
+                .duration(1300)
+                .playOn(view.findViewById(R.id.test_page_three_question_four_card_view));
+        YoYo.with(Techniques.FadeIn)
+                .duration(1400)
+                .playOn(view.findViewById(R.id.test_page_three_question_five_card_view));
     }
 }

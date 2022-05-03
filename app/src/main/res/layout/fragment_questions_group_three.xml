@@ -1,171 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:orientation="vertical"
+<RelativeLayout android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".questions.QuestionsGroupThreeFragment">
+    tools:context=".questions.QuestionsGroupThreeFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <TextView
-                android:id="@+id/test_page_three_question_one"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/question"
-                android:textSize="@dimen/_15ssp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-            <RadioGroup
-                android:id="@+id/test_page_three_choices_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_below="@id/test_page_three_question_one"
-                >
-                <RadioButton
-                    android:id="@+id/test_page_three_choices_one_ans_one"
+                android:elevation="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:cardPreventCornerOverlap="false"
+                android:layout_margin="@dimen/_10sdp"
+                android:id="@+id/test_page_three_question_one_card_view">
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="You suspect he/she is helping you, and you reject him/her."
-                    android:textColor="@color/black"/>
-                <RadioButton
-                    android:id="@+id/test_page_three_choices_one_ans_two"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="You welcome his/her help to you and accept it."
-                    android:textColor="@color/black"/>
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/test_page_three_question_id_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/_1"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_15ssp"/>
+                    <TextView
+                        android:id="@+id/test_page_three_question_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question"
+                        android:textSize="@dimen/_15ssp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@id/test_page_three_question_id_one"/>
+                    <RadioGroup
+                        android:id="@+id/test_page_three_choices_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_below="@id/test_page_three_question_one"
+                        >
+                        <RadioButton
+                            android:id="@+id/test_page_three_choices_one_ans_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="You suspect his/her intention, and you reject him/her."
+                            android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/test_page_three_choices_one_ans_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="You welcome his/her help to you and accept it."
+                            android:textColor="@color/black"/>
 
-            </RadioGroup>
-            <TextView
-                android:id="@+id/test_page_three_question_two"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/question"
-                android:textSize="@dimen/_15ssp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_below="@id/test_page_three_choices_one"/>
-            <RadioGroup
-                android:id="@+id/test_page_three_choices_two"
+                    </RadioGroup>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardPreventCornerOverlap="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_below="@id/test_page_three_question_two"
-                >
-                <RadioButton
-                    android:id="@+id/test_page_three_choices_two_ans_one"
+                android:elevation="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:id="@+id/test_page_three_question_two_card_view"
+                android:layout_below="@+id/test_page_three_question_one_card_view">
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="You accuse others of what they didn't do."
-                    android:textColor="@color/black"/>
-                <RadioButton
-                    android:id="@+id/test_page_three_choices_two_ans_two"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Quietly withdraw from the debate."
-                    android:textColor="@color/black"/>
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/test_page_three_question_id_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/_1"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_15ssp"/>
+                    <TextView
+                        android:id="@+id/test_page_three_question_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question"
+                        android:textSize="@dimen/_15ssp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@id/test_page_three_question_id_two"
+                        />
+                    <RadioGroup
+                        android:id="@+id/test_page_three_choices_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_below="@id/test_page_three_question_two"
+                        >
+                        <RadioButton
+                            android:id="@+id/test_page_three_choices_two_ans_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="You accuse others of what they didn't do."
+                            android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/test_page_three_choices_two_ans_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="You quietly withdraw from the debate."
+                            android:textColor="@color/black"/>
 
-            </RadioGroup>
+                    </RadioGroup>
 
-
-
-            <TextView
-                android:id="@+id/test_page_three_question_three"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/question"
-                android:textSize="@dimen/_15ssp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_below="@id/test_page_three_choices_two"/>
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/test_page_three_answer_three"
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardPreventCornerOverlap="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/answer"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_below="@id/test_page_three_question_three"/>
-
-            <TextView
-                android:id="@+id/test_page_three_question_four"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/question"
-                android:textSize="@dimen/_15ssp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_below="@id/test_page_three_answer_three"/>
-            <RadioGroup
-                android:id="@+id/test_page_three_choices_four"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_below="@id/test_page_three_question_four"
-                >
-                <RadioButton
-                    android:id="@+id/test_page_three_choices_four_ans_one"
+                android:elevation="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:id="@+id/test_page_three_question_three_card_view"
+                android:layout_below="@id/test_page_three_question_two_card_view">
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Details of the painting."
-                    android:textColor="@color/black"/>
-                <RadioButton
-                    android:id="@+id/test_page_three_choices_four_ans_two"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Only visible things."
-                    android:textColor="@color/black"/>
+                    >
+                    <TextView
+                        android:id="@+id/test_page_three_question_id_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/_1"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_15ssp"/>
+                    <TextView
+                        android:id="@+id/test_page_three_question_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question"
+                        android:textSize="@dimen/_15ssp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_toEndOf="@id/test_page_three_question_id_three"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        />
 
-            </RadioGroup>
+                    <RadioGroup
+                        android:id="@+id/test_page_three_choices_three"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_below="@id/test_page_three_question_three"
 
+                        >
+                        <RadioButton
+                            android:id="@+id/test_page_three_choices_three_ans_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Yes, you think that you're unique."
+                            android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/test_page_three_choices_three_ans_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="No, you see that you are like-minded to those around you."
+                            android:textColor="@color/black"/>
 
+                    </RadioGroup>
 
-            <TextView
-                android:id="@+id/test_page_three_question_five"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/question"
-                android:textSize="@dimen/_15ssp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_below="@id/test_page_three_choices_four"/>
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/test_page_three_answer_five"
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardPreventCornerOverlap="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/answer"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_below="@id/test_page_three_question_five"/>
+                android:elevation="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:id="@+id/test_page_three_question_four_card_view"
+                android:layout_below="@id/test_page_three_question_three_card_view">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/test_page_three_question_id_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/_1"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_15ssp"/>
+                    <TextView
+                        android:id="@+id/test_page_three_question_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question"
+                        android:textSize="@dimen/_15ssp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/test_page_three_question_id_four"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        />
+                    <RadioGroup
+                        android:id="@+id/test_page_three_choices_four"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_below="@id/test_page_three_question_four"
+                        >
+                        <RadioButton
+                            android:id="@+id/test_page_three_choices_four_ans_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Details of the painting."
+                            android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/test_page_three_choices_four_ans_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Only visible things."
+                            android:textColor="@color/black"/>
+
+                    </RadioGroup>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardPreventCornerOverlap="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:id="@+id/test_page_three_question_five_card_view"
+                android:layout_below="@id/test_page_three_question_four_card_view">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/test_page_three_question_id_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/_1"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_15ssp"/>
+                    <TextView
+                        android:id="@+id/test_page_three_question_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question"
+                        android:textSize="@dimen/_15ssp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/test_page_three_question_id_five"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        />
+                    <RadioGroup
+                        android:id="@+id/test_page_three_choices_five"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_below="@id/test_page_three_question_five"
+                        >
+                        <RadioButton
+                            android:id="@+id/test_page_three_choices_five_ans_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Yes, you are saving your money."
+                            android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/test_page_three_choices_five_ans_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="No, you are spending a lot."
+                            android:textColor="@color/black"/>
+
+                    </RadioGroup>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
+
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

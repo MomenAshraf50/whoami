@@ -1,164 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:orientation="vertical"
+<RelativeLayout android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".questions.QuestionsGroupFourFragment">
+    tools:context=".questions.QuestionsGroupFourFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:ignore="ScrollViewSize">
-
-            <TextView
-                android:id="@+id/test_page_four_question_one"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/question"
-                android:textSize="@dimen/_15ssp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-            <RadioGroup
-                android:id="@+id/test_page_four_choices_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_below="@id/test_page_four_question_one"
-                >
-                <RadioButton
-                    android:id="@+id/test_page_four_choices_one_ans_one"
+                android:elevation="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:cardPreventCornerOverlap="false"
+                android:layout_margin="@dimen/_10sdp"
+                android:id="@+id/test_page_four_question_one_card_view">
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="You meet his request first, and then you keep working."
-                    android:textColor="@color/black"/>
-                <RadioButton
-                    android:id="@+id/test_page_four_choices_one_ans_two"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/test_page_four_question_id_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/_1"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_15ssp"/>
+                    <TextView
+                        android:id="@+id/test_page_four_question_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question"
+                        android:textSize="@dimen/_15ssp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@id/test_page_four_question_id_one"/>
+                    <RadioGroup
+                        android:id="@+id/test_page_four_choices_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_below="@id/test_page_four_question_one"
+                        >
+                        <RadioButton
+                            android:id="@+id/test_page_four_choices_one_ans_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="You meet his request first, and then you continue working."
+                            android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/test_page_four_choices_one_ans_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="You finish your job first, then you meet his request."
+                            android:textColor="@color/black"/>
+
+                    </RadioGroup>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardPreventCornerOverlap="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:id="@+id/test_page_four_question_two_card_view"
+                android:layout_below="@+id/test_page_four_question_one_card_view">
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="You finish your job first, then you meet his request."
-                    android:textColor="@color/black"/>
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/test_page_four_question_id_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/_1"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_15ssp"/>
+                    <TextView
+                        android:id="@+id/test_page_four_question_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question"
+                        android:textSize="@dimen/_15ssp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@id/test_page_four_question_id_two"
+                        />
+                    <RadioGroup
+                        android:id="@+id/test_page_four_choices_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_below="@id/test_page_four_question_two"
+                        >
+                        <RadioButton
+                            android:id="@+id/test_page_four_choices_two_ans_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Yes, you prefer to appear in an unconventional way."
+                            android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/test_page_four_choices_two_ans_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="No, you always like traditional way."
+                            android:textColor="@color/black"/>
 
-            </RadioGroup>
+                    </RadioGroup>
 
-
-            <TextView
-                android:id="@+id/test_page_four_question_two"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/question"
-                android:textSize="@dimen/_15ssp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_below="@id/test_page_four_choices_one"/>
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/test_page_four_answer_two"
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardPreventCornerOverlap="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/answer"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_below="@id/test_page_four_question_two"/>
-
-            <TextView
-                android:id="@+id/test_page_four_question_three"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/question"
-                android:textSize="@dimen/_15ssp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_below="@id/test_page_four_answer_two"/>
-
-            <RadioGroup
-                android:id="@+id/test_page_four_choices_three"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_below="@id/test_page_four_question_three"
-                >
-                <RadioButton
-                    android:id="@+id/test_page_four_choices_three_ans_one"
+                android:elevation="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:id="@+id/test_page_four_question_three_card_view"
+                android:layout_below="@id/test_page_four_question_two_card_view">
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="You feel remorse and guilt."
-                    android:textColor="@color/black"/>
-                <RadioButton
-                    android:id="@+id/test_page_four_choices_three_ans_two"
+                    >
+                    <TextView
+                        android:id="@+id/test_page_four_question_id_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/_1"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_15ssp"/>
+                    <TextView
+                        android:id="@+id/test_page_four_question_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question"
+                        android:textSize="@dimen/_15ssp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_toEndOf="@id/test_page_four_question_id_three"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        />
+
+                    <RadioGroup
+                        android:id="@+id/test_page_four_choices_three"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_below="@id/test_page_four_question_three"
+
+                        >
+                        <RadioButton
+                            android:id="@+id/test_page_four_choices_three_ans_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="You feel remorse and guilt."
+                            android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/test_page_four_choices_three_ans_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="You don't regret what you did."
+                            android:textColor="@color/black"/>
+
+                    </RadioGroup>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardPreventCornerOverlap="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:id="@+id/test_page_four_question_four_card_view"
+                android:layout_below="@id/test_page_four_question_three_card_view">
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="You don't regret for what you did."
-                    android:textColor="@color/black"/>
-            </RadioGroup>
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/test_page_four_question_id_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/_1"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_15ssp"/>
+                    <TextView
+                        android:id="@+id/test_page_four_question_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question"
+                        android:textSize="@dimen/_15ssp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/test_page_four_question_id_four"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        />
+                    <RadioGroup
+                        android:id="@+id/test_page_four_choices_four"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_below="@id/test_page_four_question_four"
+                        >
+                        <RadioButton
+                            android:id="@+id/test_page_four_choices_four_ans_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Yes, you can relax quickly."
+                            android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/test_page_four_choices_four_ans_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="No, it is difficult for you."
+                            android:textColor="@color/black"/>
 
+                    </RadioGroup>
 
-
-
-
-            <TextView
-                android:id="@+id/test_page_four_question_four"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/question"
-                android:textSize="@dimen/_15ssp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_below="@id/test_page_four_choices_three"/>
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/test_page_four_answer_four"
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                app:cardPreventCornerOverlap="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/answer"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_below="@id/test_page_four_question_four"/>
+                android:elevation="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:id="@+id/test_page_four_question_five_card_view"
+                android:layout_below="@id/test_page_four_question_four_card_view">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/test_page_four_question_id_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/_1"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_15ssp"/>
+                    <TextView
+                        android:id="@+id/test_page_four_question_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question"
+                        android:textSize="@dimen/_15ssp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/test_page_four_question_id_five"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        />
+                    <RadioGroup
+                        android:id="@+id/test_page_four_choices_five"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_below="@id/test_page_four_question_five"
+                        >
+                        <RadioButton
+                            android:id="@+id/test_page_four_choices_five_ans_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Yes, you think you can easily live an independent life."
+                            android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/test_page_four_choices_five_ans_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="No, you cannot live with independence in peace."
+                            android:textColor="@color/black"/>
 
-            <TextView
-                android:id="@+id/test_page_four_question_five"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/question"
-                android:textSize="@dimen/_15ssp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_below="@id/test_page_four_answer_four"/>
+                    </RadioGroup>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/test_page_four_answer_five"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/answer"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_below="@id/test_page_four_question_five"/>
-
-
-
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
+
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
