@@ -28,6 +28,9 @@ public class QuestionsResponse {
     @SerializedName("7")
     @Expose
     private List<com.example.whoami.api.Seven> Seven = null;
+    @SerializedName("8")
+    @Expose
+    private List<com.example.whoami.api.Eight> Eight = null;
 
     public List<com.example.whoami.api.One> get1() {
         return One;
@@ -84,5 +87,13 @@ public class QuestionsResponse {
     public void set7(List<com.example.whoami.api.Seven> seven) {
         this.Seven = seven;
     }
+    public List<com.example.whoami.api.Eight> get8() {
+        return Eight;
+    }
+
+    public void set8(List<com.example.whoami.api.Eight> eight) {
+        this.Eight = eight;
+    }
+
 
 }

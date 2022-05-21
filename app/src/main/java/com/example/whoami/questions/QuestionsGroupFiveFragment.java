@@ -72,23 +72,20 @@ public class QuestionsGroupFiveFragment extends Fragment {
                     @Override
                     public void onResponse(Call<QuestionsResponse> call, Response<QuestionsResponse> response) {
                         if (response.isSuccessful()&&response.body()!=null){
+
                             QuestionsResponse questionsResponse = response.body();
                             List<Five> fiveList =questionsResponse.get5();
                             Five one = fiveList.get(0);
                             String questionOne = one.getQuestion();
-                            int questionOneId = one.getId();
                             Five two = fiveList.get(1);
                             String questionTwo = two.getQuestion();
-                            int questionTwoId = two.getId();
                             Five three = fiveList.get(2);
                             String questionThree = three.getQuestion();
-                            int questionThreeId = three.getId();
                             Five four = fiveList.get(3);
                             String questionFour = four.getQuestion();
-                            int questionFourId = four.getId();
                             Five five = fiveList.get(4);
                             String questionFive = five.getQuestion();
-                            int questionFiveId = five.getId();
+
 
                             textViewQuestionOne.setText(questionOne);
                             textViewQuestionTwo.setText(questionTwo);

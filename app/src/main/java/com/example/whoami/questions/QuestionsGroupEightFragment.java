@@ -1,6 +1,7 @@
 package com.example.whoami.questions;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -18,9 +19,11 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.whoami.Answers;
 import com.example.whoami.R;
-import com.example.whoami.api.RetrofitClientPost;
+import com.example.whoami.ResultActivity;
+import com.example.whoami.api.Eight;
+import com.example.whoami.api.QuestionsResponse;
+import com.example.whoami.api.RetrofitClient;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.jetbrains.annotations.NotNull;
@@ -41,7 +44,7 @@ public class QuestionsGroupEightFragment extends Fragment {
     FloatingActionButton pageEightButton;
     SeekBar seekBarOne,seekBarTWo,seekBarThree,seekBarFour,seekBarFive;
     SharedPreferences sharedPreferences;
-    List<Answers> answersList = new ArrayList<>();
+
     List<String> answers  = new ArrayList<String>();
 
     private static final String TAG = "QuestionsGroupEightFrag";
@@ -59,6 +62,35 @@ public class QuestionsGroupEightFragment extends Fragment {
         inet(view);
         animation(view);
         seekBarChange();
+
+        RetrofitClient.getService().getQuestions()
+                .enqueue(new Callback<QuestionsResponse>() {
+                    @Override
+                    public void onResponse(Call<QuestionsResponse> call, Response<QuestionsResponse> response) {
+                        QuestionsResponse questionsResponse = response.body();
+                        List<Eight> fiveList =questionsResponse.get8();
+                        Eight one = fiveList.get(0);
+                        String questionOne = one.getQuestion();
+                        Eight two = fiveList.get(1);
+                        String questionTwo = two.getQuestion();
+                        Eight three = fiveList.get(2);
+                        String questionThree = three.getQuestion();
+                        Eight four = fiveList.get(3);
+                        String questionFour = four.getQuestion();
+                        Eight five = fiveList.get(4);
+                        String questionFive = five.getQuestion();
+                        textViewQuestionOne.setText(questionOne);
+                        textViewQuestionTwo.setText(questionTwo);
+                        textViewQuestionThree.setText(questionThree);
+                        textViewQuestionFour.setText(questionFour);
+                        textViewQuestionFive.setText(questionFive);
+                    }
+
+                    @Override
+                    public void onFailure(Call<QuestionsResponse> call, Throwable t) {
+
+                    }
+                });
 
         pageEightButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,11 +122,15 @@ public class QuestionsGroupEightFragment extends Fragment {
 
                 getData();
 
-                RetrofitClientPost.Post().storePost(answers)
+                RetrofitClient.getService().storePost(answers)
                         .enqueue(new Callback<Integer>() {
                             @Override
                             public void onResponse(Call<Integer> call, Response<Integer> response) {
                                 Toast.makeText(getContext(), "sent", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getContext(),ResultActivity.class);
+                                intent.putExtra("personalityNum",response.body());
+                                startActivity(intent);
+                                Log.i(TAG, "onResponse: "+response.body());
                             }
 
                             @Override
@@ -104,6 +140,7 @@ public class QuestionsGroupEightFragment extends Fragment {
 
 
                         });
+
 
 
                 Toast.makeText(getContext(), "Good Job", Toast.LENGTH_SHORT).show();

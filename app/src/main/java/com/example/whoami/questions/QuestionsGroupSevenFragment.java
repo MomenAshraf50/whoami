@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,18 +21,14 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.whoami.Answers;
 import com.example.whoami.R;
-import com.example.whoami.api.One;
 import com.example.whoami.api.QuestionsResponse;
 import com.example.whoami.api.RetrofitClient;
 import com.example.whoami.api.Seven;
-import com.example.whoami.api.Six;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
