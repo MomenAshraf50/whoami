@@ -8,9 +8,20 @@
     android:layout_height="match_parent"
     tools:context=".questions.QuestionsGroupTwoFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ProgressBar
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_5sdp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:progress="2"
+        android:max="8"
+        android:progressDrawable="@drawable/custom_progress_bar"
+        android:id="@+id/test_progress_bar"
+        />
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/test_progress_bar">
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -32,7 +43,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="@string/_1"
+                        android:text="6."
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
@@ -59,13 +70,13 @@
                             android:id="@+id/test_page_two_choices_one_ans_one"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="You prefer to repeat it again"
+                            android:text="You prefer to repeat it again."
                             android:textColor="@color/black"/>
                         <RadioButton
                             android:id="@+id/test_page_two_choices_one_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="You prefer to take a truce to restore your psychological energy"
+                            android:text="You prefer to take a truce to restore your psychological energy."
                             android:textColor="@color/black"/>
 
                     </RadioGroup>
@@ -91,7 +102,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="@string/_1"
+                        android:text="7."
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
@@ -151,7 +162,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="@string/_1"
+                        android:text="8."
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
@@ -214,7 +225,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="@string/_1"
+                        android:text="9."
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
@@ -261,8 +272,10 @@
                 android:layout_height="wrap_content"
                 android:elevation="@dimen/_10sdp"
                 app:cardCornerRadius="@dimen/_15sdp"
-                android:layout_margin="@dimen/_10sdp"
-                android:id="@+id/test_page_two_question_five_card_view"
+                android:layout_marginBottom="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"                android:id="@+id/test_page_two_question_five_card_view"
                 android:layout_below="@id/test_page_two_question_four_card_view">
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -274,7 +287,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="@string/_1"
+                        android:text="10."
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>

@@ -87,5 +87,17 @@
         android:id="@+id/questionsGroupSevenFragment"
         android:name="com.example.whoami.questions.QuestionsGroupSevenFragment"
         android:label="fragment_questions_group_seven"
-        tools:layout="@layout/fragment_questions_group_seven" />
+        tools:layout="@layout/fragment_questions_group_seven" >
+        <action
+            android:id="@+id/action_questionsGroupSevenFragment_to_questionsGroupEightFragment"
+            app:destination="@id/questionsGroupEightFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsGroupEightFragment"
+        android:name="com.example.whoami.questions.QuestionsGroupEightFragment"
+        android:label="QuestionsGroupEightFragment" />
 </navigation>

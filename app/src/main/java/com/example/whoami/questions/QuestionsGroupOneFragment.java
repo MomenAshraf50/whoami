@@ -1,5 +1,7 @@
 package com.example.whoami.questions;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -27,6 +29,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -35,6 +38,7 @@ import retrofit2.Response;
 
 
 public class QuestionsGroupOneFragment extends Fragment {
+    public final int progressBarOne=1;
     RadioGroup radioGroupAnswerOne,radioGroupAnswerTwo,radioGroupAnswerThree,radioGroupAnswerFour
             ,radioGroupAnswerFive;
     RadioButton radioButtonAnswerOne,radioButtonAnswerTwo,radioButtonAnswerThree,radioButtonAnswerFour
@@ -43,6 +47,8 @@ public class QuestionsGroupOneFragment extends Fragment {
     FloatingActionButton pageOneButton;
     TextView textViewQuestionOne,textViewQuestionTwo,textViewQuestionThree,textViewQuestionFour
             ,textViewQuestionFive;
+    
+    SharedPreferences sharedPreferences;
 
     private static final String TAG = "QuestionsGroupOneFragme";
 
@@ -57,6 +63,7 @@ public class QuestionsGroupOneFragment extends Fragment {
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         NavController navController = Navigation.findNavController(view);
+
         inet(view);
         animation(view);
         RetrofitClient.getService().getQuestions()
@@ -108,9 +115,27 @@ public class QuestionsGroupOneFragment extends Fragment {
 
                 if (answerOneId==-1||answerTwoId==-1||answerThreeId==-1||answerFourId==-1
                 ||answerFiveId==-1){
-                    Toast.makeText(getContext(), "Please, answer all Questions", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Please, answer all Questions", Toast.LENGTH_SHORT).show();
+                    if (answerOneId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_one_question_one_card_view));
+                    }
+                    if (answerTwoId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_one_question_two_card_view));
+                    }
+                    if (answerThreeId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_one_question_three_card_view));
+                    }
+                    if (answerFourId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_one_question_four_card_view));
+                    }
+                    if (answerFiveId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_one_question_five_card_view));return;
+                    }
+
                     return;
                 }
+
+
                 radioButtonAnswerOne = view.findViewById(answerOneId);
                 radioButtonAnswerTwo = view.findViewById(answerTwoId);
                 radioButtonAnswerThree = view.findViewById(answerThreeId);
@@ -123,6 +148,16 @@ public class QuestionsGroupOneFragment extends Fragment {
                 answerThree =  radioButtonAnswerThree.getText().toString();
                 answerFour =  radioButtonAnswerFour.getText().toString();
                 answerFive =  radioButtonAnswerFive.getText().toString();
+
+
+                sharedPreferences = getActivity().getSharedPreferences("answers", Context.MODE_PRIVATE);
+                sharedPreferences.edit().putString("pageOneAnswerOne",answerOne).apply();
+                sharedPreferences.edit().putString("pageOneAnswerTwo",answerTwo).apply();
+                sharedPreferences.edit().putString("pageOneAnswerThree",answerThree).apply();
+                sharedPreferences.edit().putString("pageOneAnswerFour",answerFour).apply();
+                sharedPreferences.edit().putString("pageOneAnswerFive",answerFive).apply();
+
+
 
                 navController.navigate(R.id.action_questionsGroupOneFragment_to_questionsGroupTwoFragment);
 

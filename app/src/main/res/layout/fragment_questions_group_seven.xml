@@ -6,8 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".questions.QuestionsGroupSevenFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:progress="7"
+        android:max="8"
+        android:progressDrawable="@drawable/custom_progress_bar"
+        android:id="@+id/test_progress_bar"
+        />
     <ScrollView
+        android:id="@+id/test_page_seven_scroll_view"
+        android:layout_below="@id/test_progress_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
@@ -31,7 +42,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="@string/_1"
+                        android:text="31."
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
@@ -90,7 +101,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="@string/_1"
+                        android:text="32."
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
@@ -150,7 +161,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="@string/_1"
+                        android:text="33."
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
@@ -213,7 +224,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="@string/_1"
+                        android:text="34."
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
@@ -260,9 +271,12 @@
                 android:layout_height="wrap_content"
                 android:elevation="@dimen/_10sdp"
                 app:cardCornerRadius="@dimen/_15sdp"
-                android:layout_margin="@dimen/_10sdp"
                 android:id="@+id/test_page_seven_question_five_card_view"
-                android:layout_below="@id/test_page_seven_question_four_card_view">
+                android:layout_below="@id/test_page_seven_question_four_card_view"
+                android:layout_marginBottom="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -273,7 +287,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="@string/_1"
+                        android:text="35."
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
@@ -323,7 +337,7 @@
         android:id="@+id/test_page_seven_floating_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/check"
+        android:src="@drawable/next"
         android:layout_gravity="end"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"

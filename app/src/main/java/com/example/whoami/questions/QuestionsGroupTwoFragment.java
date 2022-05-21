@@ -1,5 +1,7 @@
 package com.example.whoami.questions;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -45,6 +47,7 @@ public class QuestionsGroupTwoFragment extends Fragment {
     FloatingActionButton pageTwoButton;
     TextView textViewQuestionOne,textViewQuestionTwo,textViewQuestionThree,textViewQuestionFour
             ,textViewQuestionFive;
+    SharedPreferences sharedPreferences;
     private static final String TAG = "QuestionsGroupTwoFragme";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -115,6 +118,21 @@ public class QuestionsGroupTwoFragment extends Fragment {
                 if (answerOneId==-1||answerTwoId==-1||answerThreeId==-1||answerFourId==-1
                         ||answerFiveId==-1){
                     Toast.makeText(getContext(), "Please, answer all Questions", Toast.LENGTH_LONG).show();
+                    if (answerOneId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_two_question_one_card_view));
+                    }
+                    if (answerTwoId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_two_question_two_card_view));
+                    }
+                    if (answerThreeId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_two_question_three_card_view));
+                    }
+                    if (answerFourId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_two_question_four_card_view));
+                    }
+                    if (answerFiveId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_two_question_five_card_view));
+                    }
                     return;
                 }
                 radioButtonAnswerOne = view.findViewById(answerOneId);
@@ -129,10 +147,26 @@ public class QuestionsGroupTwoFragment extends Fragment {
                 answerThree =  radioButtonAnswerThree.getText().toString();
                 answerFour =  radioButtonAnswerFour.getText().toString();
                 answerFive =  radioButtonAnswerFive.getText().toString();
+                sharedPreferences = getContext().getSharedPreferences("answers", Context.MODE_PRIVATE);
 
+                sharedPreferences.edit().putString("pageTwoAnswerOne",answerOne).apply();
+                sharedPreferences.edit().putString("pageTwoAnswerTwo",answerTwo).apply();
+                sharedPreferences.edit().putString("pageTwoAnswerThree",answerThree).apply();
+                sharedPreferences.edit().putString("pageTwoAnswerFour",answerFour).apply();
+                sharedPreferences.edit().putString("pageTwoAnswerFive",answerFive).apply();
+
+                String pageOneQuestionOne = sharedPreferences.getString("pageOneAnswerOne","null");
+                String pageOneQuestionTwo = sharedPreferences.getString("pageOneAnswerTwo","null");
+                String pageOneQuestionThree =sharedPreferences.getString("pageOneAnswerThree","null");
+                String pageOneQuestionFour =sharedPreferences.getString("pageOneAnswerFour","null");
+                String pageOneQuestionFive =sharedPreferences.getString("pageOneAnswerFive","null");
+                Log.i(TAG, "getData: "+pageOneQuestionOne +pageOneQuestionTwo +pageOneQuestionThree +pageOneQuestionFour +pageOneQuestionFive
+                );
                 navController.navigate(R.id.action_questionsGroupTwoFragment_to_questionsGroupThreeFragment);
             }
         });
+
+
     }
     public void inet(View view){
         pageTwoButton = view.findViewById(R.id.test_page_two_floating_btn);

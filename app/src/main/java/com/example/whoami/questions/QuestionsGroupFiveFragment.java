@@ -1,5 +1,7 @@
 package com.example.whoami.questions;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -46,6 +48,7 @@ public class QuestionsGroupFiveFragment extends Fragment {
     NavController navController;
     TextView textViewQuestionOne,textViewQuestionTwo,textViewQuestionThree,textViewQuestionFour
             ,textViewQuestionFive;
+    SharedPreferences sharedPreferences;
     private static final String TAG = "QuestionsGroupFiveFragm";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -117,6 +120,21 @@ public class QuestionsGroupFiveFragment extends Fragment {
                 if (answerOneId==-1||answerTwoId==-1||answerThreeId==-1||answerFourId==-1
                         ||answerFiveId==-1){
                     Toast.makeText(getContext(), "Please, answer all Questions", Toast.LENGTH_LONG).show();
+                    if (answerOneId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_five_question_one_card_view));
+                    }
+                    if (answerTwoId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_five_question_two_card_view));
+                    }
+                    if (answerThreeId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_five_question_three_card_view));
+                    }
+                    if (answerFourId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_five_question_four_card_view));
+                    }
+                    if (answerFiveId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_five_question_five_card_view));
+                    }
                     return;
                 }
                 radioButtonAnswerOne = view.findViewById(answerOneId);
@@ -131,6 +149,14 @@ public class QuestionsGroupFiveFragment extends Fragment {
                 answerThree =  radioButtonAnswerThree.getText().toString();
                 answerFour =  radioButtonAnswerFour.getText().toString();
                 answerFive =  radioButtonAnswerFive.getText().toString();
+
+               sharedPreferences = getContext().getSharedPreferences("answers", Context.MODE_PRIVATE);
+
+                sharedPreferences.edit().putString("pageFiveAnswerOne",answerOne).apply();
+                sharedPreferences.edit().putString("pageFiveAnswerTwo",answerTwo).apply();
+                sharedPreferences.edit().putString("pageFiveAnswerThree",answerThree).apply();
+                sharedPreferences.edit().putString("pageFiveAnswerFour",answerFour).apply();
+                sharedPreferences.edit().putString("pageFiveAnswerFive",answerFive).apply();
 
                 navController.navigate(R.id.action_questionsGroupFiveFragment_to_questionsGroupSixFragment);
             }

@@ -8,7 +8,7 @@ public class RetrofitClient {
     public static Api getService(){
         if (retrofit==null){
             retrofit =new Retrofit.Builder()
-                    .baseUrl("https://d265-156-204-222-111.ngrok.io/")
+                    .baseUrl("https://49ab-197-46-45-161.ngrok.io/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }

@@ -6,8 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".questions.QuestionsGroupOneFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ProgressBar
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_5sdp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:progress="1"
+        android:max="8"
+        android:progressDrawable="@drawable/custom_progress_bar"
+        android:id="@+id/test_progress_bar"
+        />
 
     <ScrollView
+        android:layout_below="@id/test_progress_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
@@ -90,7 +101,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="@string/_1"
+                        android:text="@string/_2"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
@@ -150,7 +161,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="@string/_1"
+                        android:text="@string/_3"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
@@ -213,7 +224,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="@string/_1"
+                        android:text="@string/_4"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
@@ -241,13 +252,13 @@
                             android:id="@+id/test_page_one_choices_four_ans_one"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Yes, you feel that you can’t fulfill your personality"
+                            android:text="Yes, you feel that you can’t fulfill your personality."
                             android:textColor="@color/black"/>
                         <RadioButton
                             android:id="@+id/test_page_one_choices_four_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="No, you could fulfill it easily"
+                            android:text="No, you could fulfill it easily."
                             android:textColor="@color/black"/>
 
                     </RadioGroup>
@@ -260,8 +271,10 @@
                 android:layout_height="wrap_content"
                 android:elevation="@dimen/_10sdp"
                 app:cardCornerRadius="@dimen/_15sdp"
-                android:layout_margin="@dimen/_10sdp"
-                android:id="@+id/test_page_one_question_five_card_view"
+                android:layout_marginBottom="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"                android:id="@+id/test_page_one_question_five_card_view"
                 android:layout_below="@id/test_page_one_question_four_card_view">
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -273,7 +286,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="@string/_1"
+                        android:text="@string/_5"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>

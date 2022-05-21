@@ -1,11 +1,16 @@
 package com.example.whoami.questions;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +22,7 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.example.whoami.Answers;
 import com.example.whoami.R;
 import com.example.whoami.api.One;
 import com.example.whoami.api.QuestionsResponse;
@@ -27,6 +33,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -43,6 +50,7 @@ public class QuestionsGroupSevenFragment extends Fragment {
     FloatingActionButton pageSevenButton;
     TextView textViewQuestionOne,textViewQuestionTwo,textViewQuestionThree,textViewQuestionFour
             ,textViewQuestionFive;
+    SharedPreferences sharedPreferences;
     private static final String TAG = "QuestionsGroupSevenFrag";
 
     @Override
@@ -55,7 +63,7 @@ public class QuestionsGroupSevenFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        NavController navController = Navigation.findNavController(view);
         inet(view);
         animation(view);
 
@@ -98,6 +106,8 @@ public class QuestionsGroupSevenFragment extends Fragment {
                         Log.i(TAG, "onFailure: " + error);
                     }
                 });
+
+
         pageSevenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,6 +120,21 @@ public class QuestionsGroupSevenFragment extends Fragment {
                 if (answerOneId==-1||answerTwoId==-1||answerThreeId==-1||answerFourId==-1
                         ||answerFiveId==-1){
                     Toast.makeText(getContext(), "Please, answer all Questions", Toast.LENGTH_LONG).show();
+                    if (answerOneId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_seven_question_one_card_view));
+                    }
+                    if (answerTwoId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_seven_question_two_card_view));
+                    }
+                    if (answerThreeId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_seven_question_three_card_view));
+                    }
+                    if (answerFourId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_seven_question_four_card_view));
+                    }
+                    if (answerFiveId==-1){
+                        YoYo.with(Techniques.Shake).duration(1000).playOn(view.findViewById(R.id.test_page_seven_question_five_card_view));
+                    }
                     return;
                 }
                 radioButtonAnswerOne = view.findViewById(answerOneId);
@@ -125,7 +150,15 @@ public class QuestionsGroupSevenFragment extends Fragment {
                 answerFour =  radioButtonAnswerFour.getText().toString();
                 answerFive =  radioButtonAnswerFive.getText().toString();
 
-                Toast.makeText(getContext(), "Good Job", Toast.LENGTH_SHORT).show();
+               sharedPreferences = getContext().getSharedPreferences("answers", Context.MODE_PRIVATE);
+
+                sharedPreferences.edit().putString("pageSevenAnswerOne",answerOne).apply();
+                sharedPreferences.edit().putString("pageSevenAnswerTwo",answerTwo).apply();
+                sharedPreferences.edit().putString("pageSevenAnswerThree",answerThree).apply();
+                sharedPreferences.edit().putString("pageSevenAnswerFour",answerFour).apply();
+                sharedPreferences.edit().putString("pageSevenAnswerFive",answerFive).apply();
+
+                navController.navigate(R.id.action_questionsGroupSevenFragment_to_questionsGroupEightFragment);
             }
         });
     }
