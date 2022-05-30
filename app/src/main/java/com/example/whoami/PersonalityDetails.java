@@ -18,6 +18,9 @@ public class PersonalityDetails {
         this.personalityCharacteristicSix = personalityCharacteristicSix;
     }
 
+    public PersonalityDetails() {
+    }
+
     public int getImagePath() {
         return imagePath;
     }

@@ -1,4 +1,4 @@
-package com.example.whoami;
+package com.example.whoami.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentContainerView;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ProgressBar;
 
+import com.example.whoami.R;
 import com.example.whoami.questions.QuestionsGroupOneFragment;
 import com.google.android.material.tabs.TabLayout;
 

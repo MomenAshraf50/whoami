@@ -1,4 +1,4 @@
-package com.example.whoami;
+package com.example.whoami.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 
+import com.example.whoami.R;
 import com.example.whoami.adapters.MoreInfoTabsAdapter;
 import com.google.android.material.tabs.TabLayout;
 

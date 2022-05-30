@@ -1,4 +1,4 @@
-package com.example.whoami;
+package com.example.whoami.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.whoami.R;
 
 public class PersonalityViewActivity extends AppCompatActivity {
 
@@ -39,12 +41,12 @@ public class PersonalityViewActivity extends AppCompatActivity {
             String personalityName = getIntent().getStringExtra("personalityName");
             String personalityInfo = getIntent().getStringExtra("personalityInfo");
             int personalityImagePath = getIntent().getIntExtra("personalityImage",0);
-            String personalityCharacteristicOne = getIntent().getStringExtra("PersonalityCharacteristicOne");
-            String personalityCharacteristicTwo = getIntent().getStringExtra("PersonalityCharacteristicTwo");
-            String personalityCharacteristicThree = getIntent().getStringExtra("PersonalityCharacteristicThree");
-            String personalityCharacteristicFour = getIntent().getStringExtra("PersonalityCharacteristicFour");
-            String personalityCharacteristicFive = getIntent().getStringExtra("PersonalityCharacteristicFive");
-            String personalityCharacteristicSix = getIntent().getStringExtra("PersonalityCharacteristicSix");
+            String personalityCharacteristicOne = getIntent().getStringExtra("personalityCharacteristicOne");
+            String personalityCharacteristicTwo = getIntent().getStringExtra("personalityCharacteristicTwo");
+            String personalityCharacteristicThree = getIntent().getStringExtra("personalityCharacteristicThree");
+            String personalityCharacteristicFour = getIntent().getStringExtra("personalityCharacteristicFour");
+            String personalityCharacteristicFive = getIntent().getStringExtra("personalityCharacteristicFive");
+            String personalityCharacteristicSix = getIntent().getStringExtra("personalityCharacteristicSix");
             imageViewPersonality.setImageResource(personalityImagePath);
             textViewPersonalityName.setText(personalityName);
             textViewPersonalityInfo.setText(personalityInfo);

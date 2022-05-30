@@ -1,4 +1,4 @@
-package com.example.whoami;
+package com.example.whoami.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.example.whoami.R;
 import com.example.whoami.adapters.MainScreenAdapter;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 

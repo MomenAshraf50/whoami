@@ -8,7 +8,7 @@ public class RetrofitClient {
     public static Api getService(){
         if (retrofit==null){
             retrofit =new Retrofit.Builder()
-                    .baseUrl("https://49ab-197-46-45-161.ngrok.io/")
+                    .baseUrl("https://youssefmm.pythonanywhere.com/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }

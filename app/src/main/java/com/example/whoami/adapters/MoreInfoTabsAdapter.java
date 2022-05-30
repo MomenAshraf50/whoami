@@ -6,8 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.whoami.PersonalitiesFactorsFragment;
-import com.example.whoami.PersonalitiesFragment;
+import com.example.whoami.ui.PersonalitiesFactorsFragment;
+import com.example.whoami.ui.PersonalitiesFragment;
 
 import org.jetbrains.annotations.NotNull;
 

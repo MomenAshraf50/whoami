@@ -14,6 +14,4 @@ public interface Api {
     @POST("Q_A/api/results")
     public Call<Integer>  storePost(@Body List<String> answers);
 
-    @GET("Q_A/api/results")
-    public Call<Integer>  getPersonality();
 }

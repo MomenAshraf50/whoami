@@ -12,9 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.whoami.PersonalityDetails;
-import com.example.whoami.PersonalityViewActivity;
+import com.example.whoami.ui.PersonalityViewActivity;
 import com.example.whoami.R;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.List;
 
@@ -47,12 +46,12 @@ public class PersonalitiesAdapter extends RecyclerView.Adapter<PersonalitiesAdap
                 intent.putExtra("personalityImage",details.getImagePath());
                 intent.putExtra("personalityInfo",details.getPersonalityInfo());
                 intent.putExtra("personalityName",details.getPersonalityName());
-                intent.putExtra("PersonalityCharacteristicOne",details.getPersonalityCharacteristicOne());
-                intent.putExtra("PersonalityCharacteristicTwo",details.getPersonalityCharacteristicTwo());
-                intent.putExtra("PersonalityCharacteristicThree",details.getPersonalityCharacteristicThree());
-                intent.putExtra("PersonalityCharacteristicFour",details.getPersonalityCharacteristicFour());
-                intent.putExtra("PersonalityCharacteristicFive",details.getPersonalityCharacteristicFive());
-                intent.putExtra("PersonalityCharacteristicSix",details.getPersonalityCharacteristicSix());
+                intent.putExtra("personalityCharacteristicOne",details.getPersonalityCharacteristicOne());
+                intent.putExtra("personalityCharacteristicTwo",details.getPersonalityCharacteristicTwo());
+                intent.putExtra("personalityCharacteristicThree",details.getPersonalityCharacteristicThree());
+                intent.putExtra("personalityCharacteristicFour",details.getPersonalityCharacteristicFour());
+                intent.putExtra("personalityCharacteristicFive",details.getPersonalityCharacteristicFive());
+                intent.putExtra("personalityCharacteristicSix",details.getPersonalityCharacteristicSix());
                 context.startActivity(intent);
 
 

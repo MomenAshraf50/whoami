@@ -20,7 +20,7 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.whoami.R;
-import com.example.whoami.ResultActivity;
+import com.example.whoami.ui.ResultActivity;
 import com.example.whoami.api.Eight;
 import com.example.whoami.api.QuestionsResponse;
 import com.example.whoami.api.RetrofitClient;
@@ -310,14 +310,14 @@ public class QuestionsGroupEightFragment extends Fragment {
         String pageSevenAnswerThree =sharedPreferences.getString("pageSevenAnswerThree","null");
         String pageSevenAnswerFour =sharedPreferences.getString("pageSevenAnswerFour","null");
         String pageSevenAnswerFive =sharedPreferences.getString("pageSevenAnswerFive","null");
-
+        String age = sharedPreferences.getString("age","null");
 
         answers.add(pageOneAnswerOne);
         answers.add(pageOneAnswerTwo);
         answers.add(pageOneAnswerThree);
         answers.add(pageOneAnswerFour);
         answers.add(pageOneAnswerFive);
-        answers.add(pageOneAnswerOne);
+        answers.add(pageTwoAnswerOne);
         answers.add(pageTwoAnswerTwo);
         answers.add(pageTwoAnswerThree);
         answers.add(pageTwoAnswerFour);
@@ -352,7 +352,7 @@ public class QuestionsGroupEightFragment extends Fragment {
         answers.add(answerThree);
         answers.add(answerFour);
         answers.add(answerFive);
-        answers.add("22");
+        answers.add(age);
 
 
 

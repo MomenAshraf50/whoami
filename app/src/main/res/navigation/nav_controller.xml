@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_controller"
-    app:startDestination="@id/questionsGroupOneFragment">
+    app:startDestination="@id/startTestFragment">
 
     <fragment
         android:id="@+id/questionsGroupOneFragment"
@@ -100,4 +100,17 @@
         android:id="@+id/questionsGroupEightFragment"
         android:name="com.example.whoami.questions.QuestionsGroupEightFragment"
         android:label="QuestionsGroupEightFragment" />
+    <fragment
+        android:id="@+id/startTestFragment"
+        android:name="com.example.whoami.questions.StartTestFragment"
+        android:label="fragment_strat_test"
+        tools:layout="@layout/fragment_strat_test" >
+        <action
+            android:id="@+id/action_startTestFragment_to_questionsGroupOneFragment"
+            app:destination="@id/questionsGroupOneFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 </navigation>
