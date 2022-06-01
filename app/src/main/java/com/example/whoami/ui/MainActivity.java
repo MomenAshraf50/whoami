@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
         isDarkModeOn = getDarkModeStatus();
 
         if (isDarkModeOn){
-            buttonModeToggle.setImageResource(R.drawable.dark_mode_btn);
-        }else {
             buttonModeToggle.setImageResource(R.drawable.light_mode_btn);
+        }else {
+            buttonModeToggle.setImageResource(R.drawable.dark_mode_btn);
         }
 
         buttonModeToggle.setOnClickListener(new View.OnClickListener() {
