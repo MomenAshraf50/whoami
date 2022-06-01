@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
     tools:context=".questions.QuestionsGroupSevenFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ProgressBar
+
+        <ProgressBar
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_5sdp"
         android:layout_marginTop="@dimen/_2sdp"
@@ -17,8 +21,9 @@
         android:id="@+id/test_progress_bar"
         />
     <ScrollView
-        android:id="@+id/test_page_eight_scroll_view"
-        android:layout_below="@id/test_progress_bar"
+        app:layout_constraintTop_toBottomOf="@id/test_progress_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
@@ -43,7 +48,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="36."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -53,8 +58,9 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:layout_toEndOf="@id/test_page_eight_question_id_one"/>
                     <SeekBar
                         android:id="@+id/test_page_eight_question_one_seek_bar"
@@ -63,7 +69,7 @@
                         android:layout_below="@id/test_page_eight_question_one"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
                         android:max="10"
                         android:progress="0"/>
@@ -76,7 +82,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textSize="@dimen/_12ssp"/>
                     <TextView
                         android:id="@+id/seek_bar_answer_one_tv"
@@ -88,7 +94,7 @@
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textSize="@dimen/_12ssp"/>
 
                 </RelativeLayout>
@@ -114,7 +120,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="37."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -124,8 +130,9 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:layout_toEndOf="@id/test_page_eight_question_id_two"
 
                         />
@@ -136,7 +143,7 @@
                         android:layout_below="@id/test_page_eight_question_two"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
                         android:max="10"
                         android:progress="0"/>
@@ -149,7 +156,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textSize="@dimen/_12ssp"/>
                     <TextView
                         android:id="@+id/seek_bar_answer_two_tv"
@@ -161,7 +168,7 @@
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textSize="@dimen/_12ssp"/>
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -185,7 +192,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="38."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -195,9 +202,10 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:layout_toEndOf="@id/test_page_eight_question_id_three"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         />
                     <SeekBar
                         android:id="@+id/test_page_eight_question_three_seek_bar"
@@ -206,7 +214,7 @@
                         android:layout_below="@id/test_page_eight_question_three"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
                         android:max="10"
                         android:progress="0"/>
@@ -219,7 +227,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textSize="@dimen/_12ssp"/>
                     <TextView
                         android:id="@+id/seek_bar_answer_three_tv"
@@ -231,7 +239,7 @@
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textSize="@dimen/_12ssp"/>
 
 
@@ -259,7 +267,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="39."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -269,9 +277,10 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:layout_toEndOf="@+id/test_page_eight_question_id_four"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         />
                     <SeekBar
                         android:id="@+id/test_page_eight_question_four_seek_bar"
@@ -280,7 +289,7 @@
                         android:layout_below="@id/test_page_eight_question_four"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
                         android:max="10"
                         android:progress="0"/>
@@ -293,7 +302,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textSize="@dimen/_12ssp"/>
                     <TextView
                         android:id="@+id/seek_bar_answer_four_tv"
@@ -305,7 +314,7 @@
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textSize="@dimen/_12ssp"/>
 
 
@@ -319,7 +328,7 @@
                 app:cardCornerRadius="@dimen/_15sdp"
                 android:id="@+id/test_page_eight_question_five_card_view"
                 android:layout_below="@id/test_page_eight_question_four_card_view"
-                android:layout_marginBottom="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_70sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp">
@@ -334,7 +343,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="40."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -344,9 +353,10 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:layout_toEndOf="@+id/test_page_eight_question_id_five"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         />
                     <SeekBar
                         android:id="@+id/test_page_eight_question_five_seek_bar"
@@ -368,7 +378,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textSize="@dimen/_12ssp"/>
                     <TextView
                         android:id="@+id/seek_bar_answer_five_tv"
@@ -380,7 +390,7 @@
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textSize="@dimen/_12ssp"/>
 
                 </RelativeLayout>
@@ -390,16 +400,20 @@
 
     </ScrollView>
 
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/test_page_eight_floating_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/check"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_margin="@dimen/_20sdp"
         />
 
 
-</RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 

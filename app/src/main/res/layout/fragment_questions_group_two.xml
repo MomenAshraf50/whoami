@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-
-    android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,6 +7,9 @@
     tools:context=".questions.QuestionsGroupTwoFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <ProgressBar
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/_2sdp"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_5sdp"
@@ -19,9 +20,12 @@
         android:id="@+id/test_progress_bar"
         />
     <ScrollView
+        app:layout_constraintTop_toBottomOf="@id/test_progress_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/test_progress_bar">
+        >
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -44,7 +48,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="6."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -54,8 +58,9 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:layout_toEndOf="@id/test_page_two_question_id_one"/>
                     <RadioGroup
                         android:id="@+id/test_page_two_choices_one"
@@ -71,13 +76,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="You prefer to repeat it again."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_two_choices_one_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="You prefer to take a truce to restore your psychological energy."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
                 </RelativeLayout>
@@ -103,7 +108,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="7."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -113,8 +118,9 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:layout_toEndOf="@id/test_page_two_question_id_two"
                         />
                     <RadioGroup
@@ -131,13 +137,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="You depend on fraud and deception."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_two_choices_two_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="You depend on yourself."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
 
@@ -163,7 +169,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="8."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -173,9 +179,10 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:layout_toEndOf="@id/test_page_two_question_id_three"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         />
 
                     <RadioGroup
@@ -193,13 +200,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Yes, you forgive people easily."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_two_choices_three_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="No, it is difficult for you to forgive them easily."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
 
@@ -226,7 +233,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="9."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -236,9 +243,10 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:layout_toEndOf="@+id/test_page_two_question_id_four"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         />
                     <RadioGroup
                         android:id="@+id/test_page_two_choices_four"
@@ -254,13 +262,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="You will punish yourself."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_two_choices_four_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="You never punish yourself."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
 
@@ -272,7 +280,7 @@
                 android:layout_height="wrap_content"
                 android:elevation="@dimen/_10sdp"
                 app:cardCornerRadius="@dimen/_15sdp"
-                android:layout_marginBottom="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_70sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp"                android:id="@+id/test_page_two_question_five_card_view"
@@ -288,7 +296,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="10."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -298,9 +306,10 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:layout_toEndOf="@+id/test_page_two_question_id_five"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         />
                     <RadioGroup
                         android:id="@+id/test_page_two_choices_five"
@@ -316,13 +325,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="You get depressed with a logical reason."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_two_choices_five_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="You get depressed without any logical reason."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
 
@@ -336,15 +345,15 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/test_page_two_floating_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/next"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="@dimen/_20sdp"
-            />
+        android:id="@+id/test_page_two_floating_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/next"
+        android:layout_margin="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

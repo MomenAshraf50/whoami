@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,9 @@
     tools:context=".questions.QuestionsGroupThreeFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <ProgressBar
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/_2sdp"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_5sdp"
@@ -20,7 +23,10 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/test_progress_bar">
+        app:layout_constraintTop_toBottomOf="@id/test_progress_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -43,7 +49,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="11."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -53,8 +59,9 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:layout_toEndOf="@id/test_page_three_question_id_one"/>
                     <RadioGroup
                         android:id="@+id/test_page_three_choices_one"
@@ -70,13 +77,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="You suspect his/her intention, and you reject him/her."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_three_choices_one_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="You welcome his/her help to you and accept it."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
                 </RelativeLayout>
@@ -102,7 +109,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="12."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -112,8 +119,9 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:layout_toEndOf="@id/test_page_three_question_id_two"
                         />
                     <RadioGroup
@@ -130,13 +138,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="You accuse others of what they didn't do."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_three_choices_two_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="You quietly withdraw from the debate."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
 
@@ -162,7 +170,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="13."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -172,9 +180,10 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:layout_toEndOf="@id/test_page_three_question_id_three"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         />
 
                     <RadioGroup
@@ -192,13 +201,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Yes, you think that you're unique."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_three_choices_three_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="No, you see that you are like-minded to those around you."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
 
@@ -225,7 +234,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="14."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -235,9 +244,10 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:layout_toEndOf="@+id/test_page_three_question_id_four"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         />
                     <RadioGroup
                         android:id="@+id/test_page_three_choices_four"
@@ -253,13 +263,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Details of the painting."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_three_choices_four_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Only visible things."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
 
@@ -271,7 +281,7 @@
                 android:layout_height="wrap_content"
                 android:elevation="@dimen/_10sdp"
                 app:cardCornerRadius="@dimen/_15sdp"
-                android:layout_marginBottom="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_70sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp"                android:id="@+id/test_page_three_question_five_card_view"
@@ -287,7 +297,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="15."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -297,9 +307,10 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:layout_toEndOf="@+id/test_page_three_question_id_five"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         />
                     <RadioGroup
                         android:id="@+id/test_page_three_choices_five"
@@ -315,13 +326,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Yes, you are saving your money."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_three_choices_five_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="No, you are spending a lot."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
 
@@ -337,9 +348,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/next"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_margin="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

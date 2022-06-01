@@ -67,24 +67,27 @@ public class QuestionsGroupEightFragment extends Fragment {
                 .enqueue(new Callback<QuestionsResponse>() {
                     @Override
                     public void onResponse(Call<QuestionsResponse> call, Response<QuestionsResponse> response) {
-                        QuestionsResponse questionsResponse = response.body();
-                        List<Eight> fiveList =questionsResponse.get8();
-                        Eight one = fiveList.get(0);
-                        String questionOne = one.getQuestion();
-                        Eight two = fiveList.get(1);
-                        String questionTwo = two.getQuestion();
-                        Eight three = fiveList.get(2);
-                        String questionThree = three.getQuestion();
-                        Eight four = fiveList.get(3);
-                        String questionFour = four.getQuestion();
-                        Eight five = fiveList.get(4);
-                        String questionFive = five.getQuestion();
-                        textViewQuestionOne.setText(questionOne);
-                        textViewQuestionTwo.setText(questionTwo);
-                        textViewQuestionThree.setText(questionThree);
-                        textViewQuestionFour.setText(questionFour);
-                        textViewQuestionFive.setText(questionFive);
+                        if (response.isSuccessful()&&response.body() != null) {
+                            QuestionsResponse questionsResponse = response.body();
+                            List<Eight> fiveList = questionsResponse.get8();
+                            Eight one = fiveList.get(0);
+                            String questionOne = one.getQuestion();
+                            Eight two = fiveList.get(1);
+                            String questionTwo = two.getQuestion();
+                            Eight three = fiveList.get(2);
+                            String questionThree = three.getQuestion();
+                            Eight four = fiveList.get(3);
+                            String questionFour = four.getQuestion();
+                            Eight five = fiveList.get(4);
+                            String questionFive = five.getQuestion();
+                            textViewQuestionOne.setText(questionOne);
+                            textViewQuestionTwo.setText(questionTwo);
+                            textViewQuestionThree.setText(questionThree);
+                            textViewQuestionFour.setText(questionFour);
+                            textViewQuestionFive.setText(questionFive);
+                        }
                     }
+
 
                     @Override
                     public void onFailure(Call<QuestionsResponse> call, Throwable t) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,9 @@
     tools:context=".questions.QuestionsGroupSevenFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <ProgressBar
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_5sdp"
         android:layout_marginTop="@dimen/_2sdp"
@@ -17,8 +20,9 @@
         android:id="@+id/test_progress_bar"
         />
     <ScrollView
-        android:id="@+id/test_page_seven_scroll_view"
-        android:layout_below="@id/test_progress_bar"
+        app:layout_constraintTop_toBottomOf="@id/test_progress_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
@@ -43,7 +47,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="31."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -53,8 +57,9 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:layout_toEndOf="@id/test_page_seven_question_id_one"/>
                     <RadioGroup
                         android:id="@+id/test_page_seven_choices_one"
@@ -70,13 +75,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Yes, it sometimes turns into misery and depression."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_seven_choices_one_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="No, it goes out with ecstasy and happiness."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
                 </RelativeLayout>
@@ -102,7 +107,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="32."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -112,8 +117,9 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:layout_toEndOf="@id/test_page_seven_question_id_two"
                         />
                     <RadioGroup
@@ -130,13 +136,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Yes, they have problems and they are unstable."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_seven_choices_two_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="No, they are stable."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
 
@@ -162,7 +168,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="33."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -172,9 +178,10 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:layout_toEndOf="@id/test_page_seven_question_id_three"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         />
 
                     <RadioGroup
@@ -192,13 +199,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="You feel like you deserve more success and a better life."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_seven_choices_three_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="You feel good about yourself and your life."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
 
@@ -225,7 +232,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="34."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -235,9 +242,10 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:layout_toEndOf="@+id/test_page_seven_question_id_four"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         />
                     <RadioGroup
                         android:id="@+id/test_page_seven_choices_four"
@@ -253,13 +261,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Writing."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_seven_choices_four_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Voice."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
 
@@ -273,7 +281,7 @@
                 app:cardCornerRadius="@dimen/_15sdp"
                 android:id="@+id/test_page_seven_question_five_card_view"
                 android:layout_below="@id/test_page_seven_question_four_card_view"
-                android:layout_marginBottom="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_70sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp">
@@ -288,7 +296,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:text="35."
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         android:textStyle="bold"
                         android:textSize="@dimen/_15ssp"/>
                     <TextView
@@ -298,9 +306,10 @@
                         android:text="@string/question"
                         android:textSize="@dimen/_15ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
                         android:layout_toEndOf="@+id/test_page_seven_question_id_five"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColor"
                         />
                     <RadioGroup
                         android:id="@+id/test_page_seven_choices_five"
@@ -316,13 +325,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="A few people."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
                         <RadioButton
                             android:id="@+id/test_page_seven_choices_five_ans_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="A lot of people."
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/textColor"/>
 
                     </RadioGroup>
 
@@ -339,10 +348,10 @@
         android:layout_height="wrap_content"
         android:src="@drawable/next"
         android:layout_gravity="end"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_margin="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

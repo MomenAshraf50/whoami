@@ -26,8 +26,8 @@ public class MainScreenAdapter extends PagerAdapter {
             , R.drawable.start};
     String[] head = {"Who Am I","What will we do?","Let's start"};
     String[] content = {"Welcome to our App, slide to know more."
-            ,"In this application, we will ask you 33 questions in order to get to know your personality through these questions."
-            ,"but before that you should know the factors affecting all the characters. If you are interested click on more info button."};
+            ,"In this application, we will ask you 40 questions in order to get to know your personality through these questions."
+            ,"But before that you should know the factors affecting all the characters. If you are interested click on more info button."};
 
     public MainScreenAdapter(Context context) {
         this.context = context;

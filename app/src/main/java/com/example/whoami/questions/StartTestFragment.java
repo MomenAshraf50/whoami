@@ -14,6 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.example.whoami.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -45,11 +47,18 @@ public class StartTestFragment extends Fragment {
 
                 if (age.isEmpty()){
                     editTextAge.setError("Please, Enter your age.");
+                    YoYo.with(Techniques.Shake).duration(1000).playOn(editTextAge);
+                    return;
+                }
+                if (age.contains(",")||age.contains(".")||age.contains("-")||age.contains(" ")){
+                    editTextAge.setError("Enter a valid age");
+                    YoYo.with(Techniques.Shake).duration(1000).playOn(editTextAge);
                     return;
                 }
                 int ageNum = Integer.parseInt(age);
                 if (ageNum > 100){
                     editTextAge.setError("Please, Enter a valid age");
+                    YoYo.with(Techniques.Shake).duration(1000).playOn(editTextAge);
                     return;
                 }
                 sharedPreferences = getActivity().getSharedPreferences("answers", Context.MODE_PRIVATE);
