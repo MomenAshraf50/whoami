@@ -1,14 +1,18 @@
 package com.example.whoami.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -23,11 +27,36 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     DotsIndicator dotsIndicator;
     MainScreenAdapter adapter;
+    ImageButton buttonModeToggle;
+    boolean isDarkModeOn  = false  ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         inet();
+
+        isDarkModeOn = getDarkModeStatus();
+
+        if (isDarkModeOn){
+            buttonModeToggle.setImageResource(R.drawable.dark_mode_btn);
+        }else {
+            buttonModeToggle.setImageResource(R.drawable.light_mode_btn);
+        }
+
+        buttonModeToggle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isDarkModeOn){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    buttonModeToggle.setImageResource(R.drawable.dark_mode_btn);
+                    isDarkModeOn = false;
+                }else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    buttonModeToggle.setImageResource(R.drawable.light_mode_btn);
+                    isDarkModeOn= true;
+                }
+            }
+        });
         drawable = (AnimationDrawable) layout.getBackground();
         drawable.setEnterFadeDuration(1500);
         drawable.setExitFadeDuration(1000);
@@ -81,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
     }
     public void inet(){
         layout = findViewById(R.id.main_activity_layout);
@@ -88,6 +118,22 @@ public class MainActivity extends AppCompatActivity {
         buttonStartTheTest = findViewById(R.id.main_activity_btn_start_test);
         viewPager = findViewById(R.id.main_activity_view_pager);
         dotsIndicator = findViewById(R.id.dots_indicator);
+        buttonModeToggle = findViewById(R.id.main_activity_btn_mode_toggle);
+
+    }
+
+    public boolean getDarkModeStatus(){
+        int nightModeFlags =
+                MainActivity.this.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+
+        switch (nightModeFlags){
+            case Configuration.UI_MODE_NIGHT_YES:
+                return true;
+            case Configuration.UI_MODE_NIGHT_NO:
+            case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                return false;
+        }
+        return false;
     }
 
 
