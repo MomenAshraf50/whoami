@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,8 +47,9 @@ public class QuestionsGroupEightFragment extends Fragment {
     SeekBar seekBarOne,seekBarTWo,seekBarThree,seekBarFour,seekBarFive;
     SharedPreferences sharedPreferences;
 
-    List<String> answers  = new ArrayList<String>();
-
+    List<String> answers  = new ArrayList<>();
+    ScrollView scrollView;
+    ProgressBar progressBar;
     private static final String TAG = "QuestionsGroupEightFrag";
 
     @Override
@@ -80,6 +83,12 @@ public class QuestionsGroupEightFragment extends Fragment {
                             String questionFour = four.getQuestion();
                             Eight five = fiveList.get(4);
                             String questionFive = five.getQuestion();
+
+                            if (questionFive.isEmpty()){
+                                scrollView.setVisibility(View.GONE);
+                            }else {
+                                progressBar.setVisibility(View.GONE);
+                            }
                             textViewQuestionOne.setText(questionOne);
                             textViewQuestionTwo.setText(questionTwo);
                             textViewQuestionThree.setText(questionThree);
@@ -167,6 +176,8 @@ public class QuestionsGroupEightFragment extends Fragment {
         textViewAnswerThree = view.findViewById(R.id.seek_bar_answer_three_tv);
         textViewAnswerFour = view.findViewById(R.id.seek_bar_answer_four_tv);
         textViewAnswerFive = view.findViewById(R.id.seek_bar_answer_five_tv);
+        scrollView = view.findViewById(R.id.test_page_eight_scroll_layout);
+        progressBar = view.findViewById(R.id.test_page_eight_progress_bar);
 
 
 

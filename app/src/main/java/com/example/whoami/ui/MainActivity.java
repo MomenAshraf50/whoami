@@ -1,9 +1,11 @@
 package com.example.whoami.ui;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.drawable.AnimationDrawable;
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     DotsIndicator dotsIndicator;
     MainScreenAdapter adapter;
     ImageButton buttonModeToggle;
-    boolean isDarkModeOn  = false  ;
+    boolean isDarkModeOn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,7 +107,18 @@ public class MainActivity extends AppCompatActivity {
         buttonStartTheTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,TestActivity.class));
+                new AlertDialog.Builder(MainActivity.this)
+                        .setCancelable(true)
+                        .setMessage("Please, you should take this test seriously and do not think about the answers. Just pick up the first thing you tend to choose.\n" +
+                                "Also you must be honest with yourself in your answers and make sure that there are no answers recorded for you anywhere and you will always remain anonymous")
+                        .setTitle("Pay Attention")
+                        .setPositiveButton("Ok, I understand", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                startActivity(new Intent(MainActivity.this,TestActivity.class));
+                            }
+                        }).show();
+
             }
         });
 

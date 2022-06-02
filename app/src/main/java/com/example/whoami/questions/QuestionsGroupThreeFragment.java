@@ -14,8 +14,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +47,8 @@ public class QuestionsGroupThreeFragment extends Fragment {
             ,textViewQuestionFive;
     FloatingActionButton pageThreeButton;
     SharedPreferences sharedPreferences;
+    ScrollView scrollView;
+    ProgressBar progressBar;
     private static final String TAG = "QuestionsGroupThreeFrag";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -79,6 +83,11 @@ public class QuestionsGroupThreeFragment extends Fragment {
                             Three five = threeList.get(4);
                             String questionFive = five.getQuestion();
 
+                            if (questionFive.isEmpty()){
+                                scrollView.setVisibility(View.GONE);
+                            }else {
+                                progressBar.setVisibility(View.GONE);
+                            }
                             textViewQuestionOne.setText(questionOne);
                             textViewQuestionTwo.setText(questionTwo);
                             textViewQuestionThree.setText(questionThree);
@@ -139,13 +148,13 @@ public class QuestionsGroupThreeFragment extends Fragment {
                 answerFour =  radioButtonAnswerFour.getText().toString();
                 answerFive =  radioButtonAnswerFive.getText().toString();
 
-               /* sharedPreferences = getContext().getSharedPreferences("answers", Context.MODE_PRIVATE);
+               sharedPreferences = getContext().getSharedPreferences("answers", Context.MODE_PRIVATE);
 
                 sharedPreferences.edit().putString("pageThreeAnswerOne",answerOne).apply();
                 sharedPreferences.edit().putString("pageThreeAnswerTwo",answerTwo).apply();
                 sharedPreferences.edit().putString("pageThreeAnswerThree",answerThree).apply();
                 sharedPreferences.edit().putString("pageThreeAnswerFour",answerFour).apply();
-                sharedPreferences.edit().putString("pageThreeAnswerFive",answerFive).apply();*/
+                sharedPreferences.edit().putString("pageThreeAnswerFive",answerFive).apply();
 
                 navController.navigate(R.id.action_questionsGroupThreeFragment_to_questionsGroupFourFragment);
             }
@@ -163,6 +172,8 @@ public class QuestionsGroupThreeFragment extends Fragment {
         radioGroupAnswerThree = view.findViewById(R.id.test_page_three_choices_three);
         radioGroupAnswerFour = view.findViewById(R.id.test_page_three_choices_four);
         radioGroupAnswerFive = view.findViewById(R.id.test_page_three_choices_five);
+        scrollView = view.findViewById(R.id.test_page_three_scroll_layout);
+        progressBar = view.findViewById(R.id.test_page_three_progress_bar);
 
 
 

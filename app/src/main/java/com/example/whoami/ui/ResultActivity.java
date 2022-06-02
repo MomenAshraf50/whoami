@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
@@ -69,7 +71,7 @@ public class ResultActivity extends AppCompatActivity {
         personalityData();
         if (personalityNum== 2){
             getData(0);
-
+            buttonGetHelp.setVisibility(View.GONE);
         }
         if (personalityNum== 3){
             getData(1);
@@ -135,6 +137,17 @@ public class ResultActivity extends AppCompatActivity {
 
                     @Override
                     public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+                        new AlertDialog.Builder(ResultActivity.this)
+                                .setCancelable(true)
+                                .setPositiveButton("Ok, I'll allow the permission", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        askForPermission();
+                                    }
+                                }).setMessage("We can't suggest you the nearest doctor if you deny location permission")
+                                .setTitle("Permission Denied")
+                                .show();
+
 
                     }
 

@@ -14,8 +14,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +49,8 @@ public class QuestionsGroupFourFragment extends Fragment {
     TextView textViewQuestionOne,textViewQuestionTwo,textViewQuestionThree,textViewQuestionFour
             ,textViewQuestionFive;
     SharedPreferences sharedPreferences;
+    ScrollView scrollView;
+    ProgressBar progressBar;
     private static final String TAG = "QuestionsGroupFourFragm";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -74,19 +78,19 @@ public class QuestionsGroupFourFragment extends Fragment {
                             List<Four> fourList =questionsResponse.get4();
                             Four one = fourList.get(0);
                             String questionOne = one.getQuestion();
-                            int questionOneId = one.getId();
                             Four two = fourList.get(1);
                             String questionTwo = two.getQuestion();
-                            int questionTwoId = two.getId();
                             Four three = fourList.get(2);
                             String questionThree = three.getQuestion();
-                            int questionThreeId = three.getId();
                             Four four = fourList.get(3);
                             String questionFour = four.getQuestion();
-                            int questionFourId = four.getId();
                             Four five = fourList.get(4);
                             String questionFive = five.getQuestion();
-                            int questionFiveId =five.getId();
+                            if (questionFive.isEmpty()){
+                                scrollView.setVisibility(View.GONE);
+                            }else {
+                                progressBar.setVisibility(View.GONE);
+                            }
 
                             textViewQuestionOne.setText(questionOne);
                             textViewQuestionTwo.setText(questionTwo);
@@ -148,13 +152,13 @@ public class QuestionsGroupFourFragment extends Fragment {
                 answerFour =  radioButtonAnswerFour.getText().toString();
                 answerFive =  radioButtonAnswerFive.getText().toString();
 
-                /*sharedPreferences = getContext().getSharedPreferences("answers", Context.MODE_PRIVATE);
+                sharedPreferences = getContext().getSharedPreferences("answers", Context.MODE_PRIVATE);
 
                 sharedPreferences.edit().putString("pageFourAnswerOne",answerOne).apply();
                 sharedPreferences.edit().putString("pageFourAnswerTwo",answerTwo).apply();
                 sharedPreferences.edit().putString("pageFourAnswerThree",answerThree).apply();
                 sharedPreferences.edit().putString("pageFourAnswerFour",answerFour).apply();
-                sharedPreferences.edit().putString("pageFourAnswerFive",answerFive).apply();*/
+                sharedPreferences.edit().putString("pageFourAnswerFive",answerFive).apply();
 
                 navController.navigate(R.id.action_questionsGroupFourFragment_to_questionsGroupFiveFragment);
             }
@@ -172,6 +176,8 @@ public class QuestionsGroupFourFragment extends Fragment {
         radioGroupAnswerThree = view.findViewById(R.id.test_page_four_choices_three);
         radioGroupAnswerFour = view.findViewById(R.id.test_page_four_choices_four);
         radioGroupAnswerFive = view.findViewById(R.id.test_page_four_choices_five);
+        scrollView = view.findViewById(R.id.test_page_four_scroll_layout);
+        progressBar = view.findViewById(R.id.test_page_four_progress_bar);
     }
     public void animation(View view){
         YoYo.with(Techniques.FadeIn)

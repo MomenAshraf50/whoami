@@ -14,8 +14,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +50,8 @@ public class QuestionsGroupTwoFragment extends Fragment {
     TextView textViewQuestionOne,textViewQuestionTwo,textViewQuestionThree,textViewQuestionFour
             ,textViewQuestionFive;
     SharedPreferences sharedPreferences;
+    ScrollView scrollView;
+    ProgressBar progressBar;
     private static final String TAG = "QuestionsGroupTwoFragme";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -74,20 +78,20 @@ public class QuestionsGroupTwoFragment extends Fragment {
                             QuestionsResponse questionsResponse = response.body();
                             List<Two> twoList =questionsResponse.get2();
                             Two one = twoList.get(0);
-                            int questionOneId = one.getId();
                             String questionOne = one.getQuestion();
                             Two two = twoList.get(1);
-                            int questionTwoId = two.getId();
                             String questionTwo = two.getQuestion();
                             Two three = twoList.get(2);
-                            int questionThreeId = three.getId();
                             String questionThree = three.getQuestion();
                             Two four = twoList.get(3);
-                            int questionFourId = four.getId();
                             String questionFour = four.getQuestion();
                             Two five = twoList.get(4);
-                            int questionFiveId = five.getId();
                             String questionFive = five.getQuestion();
+                            if (questionFive.isEmpty()){
+                                scrollView.setVisibility(View.GONE);
+                            }else {
+                                progressBar.setVisibility(View.GONE);
+                            }
                             textViewQuestionOne.setText(questionOne);
                             textViewQuestionTwo.setText(questionTwo);
                             textViewQuestionThree.setText(questionThree);
@@ -180,6 +184,8 @@ public class QuestionsGroupTwoFragment extends Fragment {
         radioGroupAnswerThree = view.findViewById(R.id.test_page_two_choices_three);
         radioGroupAnswerFour = view.findViewById(R.id.test_page_two_choices_four);
         radioGroupAnswerFive = view.findViewById(R.id.test_page_two_choices_five);
+        scrollView = view.findViewById(R.id.test_page_two_scroll_layout);
+        progressBar = view.findViewById(R.id.test_page_two_progress_bar);
 
 
 
