@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -31,7 +32,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -51,7 +52,7 @@ public class QuestionsGroupOneFragment extends Fragment {
             ,textViewQuestionFive;
     
     SharedPreferences sharedPreferences;
-    ScrollView scrollView;
+    CardView cardViewOne,cardViewTwo,cardViewThree,cardViewFour,cardViewFive;
     ProgressBar progressBar;
 
     private static final String TAG = "QuestionsGroupOneFragme";
@@ -74,12 +75,16 @@ public class QuestionsGroupOneFragment extends Fragment {
                 .enqueue(new Callback<QuestionsResponse>() {
                     @Override
                     public void onResponse(Call<QuestionsResponse> call, Response<QuestionsResponse> response) {
+                       /* if (!response.isSuccessful()){
+
+                            pageOneButton.setClickable(false);
+                        }*/
+
                         if (response.isSuccessful()&&response.body()!=null){
                             QuestionsResponse questionsResponse = response.body();
                             List<One> oneList =questionsResponse.get1();
                             One one = oneList.get(0);
                             String questionOne = one.getQuestion();
-
                             One two = oneList.get(1);
                             String questionTwo = two.getQuestion();
                             One three = oneList.get(2);
@@ -88,17 +93,22 @@ public class QuestionsGroupOneFragment extends Fragment {
                             String questionFour = four.getQuestion();
                             One five = oneList.get(4);
                             String questionFive = five.getQuestion();
-                            if (questionFive.isEmpty()){
-                                scrollView.setVisibility(View.GONE);
-                            }else {
-                                progressBar.setVisibility(View.GONE);
-                            }
                             textViewQuestionOne.setText(questionOne);
                             textViewQuestionTwo.setText(questionTwo);
                             textViewQuestionThree.setText(questionThree);
                             textViewQuestionFour.setText(questionFour);
                             textViewQuestionFive.setText(questionFive);
+                            progressBar.setVisibility(View.GONE);
+                            cardViewOne.setVisibility(View.VISIBLE);
+                            cardViewTwo.setVisibility(View.VISIBLE);
+                            cardViewThree.setVisibility(View.VISIBLE);
+                            cardViewFour.setVisibility(View.VISIBLE);
+                            cardViewFive.setVisibility(View.VISIBLE);
+
+
+
                         }
+
                     }
 
                     @Override
@@ -186,8 +196,12 @@ public class QuestionsGroupOneFragment extends Fragment {
         radioGroupAnswerThree = view.findViewById(R.id.test_page_one_choices_three);
         radioGroupAnswerFour = view.findViewById(R.id.test_page_one_choices_four);
         radioGroupAnswerFive = view.findViewById(R.id.test_page_one_choices_five);
-        scrollView = view.findViewById(R.id.test_page_one_scroll_layout);
         progressBar = view.findViewById(R.id.test_page_one_progress_bar);
+        cardViewOne= view.findViewById(R.id.test_page_one_question_one_card_view);
+        cardViewTwo= view.findViewById(R.id.test_page_one_question_two_card_view);
+        cardViewThree= view.findViewById(R.id.test_page_one_question_three_card_view);
+        cardViewFour= view.findViewById(R.id.test_page_one_question_four_card_view);
+        cardViewFive= view.findViewById(R.id.test_page_one_question_five_card_view);
 
 
 

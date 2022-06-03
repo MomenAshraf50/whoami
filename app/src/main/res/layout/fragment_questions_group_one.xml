@@ -38,7 +38,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/test_page_one_scroll_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        >
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -49,6 +50,7 @@
                 app:cardCornerRadius="@dimen/_15sdp"
                 app:cardPreventCornerOverlap="false"
                 android:layout_margin="@dimen/_10sdp"
+                android:visibility="gone"
                 android:id="@+id/test_page_one_question_one_card_view">
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -108,6 +110,7 @@
                 android:elevation="@dimen/_10sdp"
                 app:cardCornerRadius="@dimen/_15sdp"
                 android:layout_margin="@dimen/_10sdp"
+                android:visibility="gone"
                 android:id="@+id/test_page_one_question_two_card_view"
                 android:layout_below="@+id/test_page_one_question_one_card_view">
                 <RelativeLayout
@@ -169,6 +172,7 @@
                 android:elevation="@dimen/_10sdp"
                 app:cardCornerRadius="@dimen/_15sdp"
                 android:layout_margin="@dimen/_10sdp"
+                android:visibility="gone"
                 android:id="@+id/test_page_one_question_three_card_view"
                 android:layout_below="@id/test_page_one_question_two_card_view">
                 <RelativeLayout
@@ -232,6 +236,7 @@
                 android:elevation="@dimen/_10sdp"
                 app:cardCornerRadius="@dimen/_15sdp"
                 android:layout_margin="@dimen/_10sdp"
+                android:visibility="gone"
                 android:id="@+id/test_page_one_question_four_card_view"
                 android:layout_below="@id/test_page_one_question_three_card_view">
 
@@ -296,7 +301,9 @@
                 android:layout_marginBottom="@dimen/_70sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"                android:id="@+id/test_page_one_question_five_card_view"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:visibility="gone"
+                android:id="@+id/test_page_one_question_five_card_view"
                 android:layout_below="@id/test_page_one_question_four_card_view">
                 <RelativeLayout
                     android:layout_width="match_parent"

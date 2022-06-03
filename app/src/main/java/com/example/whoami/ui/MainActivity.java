@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
@@ -31,17 +32,20 @@ public class MainActivity extends AppCompatActivity {
     MainScreenAdapter adapter;
     ImageButton buttonModeToggle;
     boolean isDarkModeOn;
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         inet();
-
-        isDarkModeOn = getDarkModeStatus();
+        sharedPreferences = MainActivity.this.getSharedPreferences("lightAndDark",MODE_PRIVATE);
+        isDarkModeOn = sharedPreferences.getBoolean("darkModeStatus",false);
 
         if (isDarkModeOn){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             buttonModeToggle.setImageResource(R.drawable.light_mode_btn);
         }else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             buttonModeToggle.setImageResource(R.drawable.dark_mode_btn);
         }
 
@@ -51,11 +55,11 @@ public class MainActivity extends AppCompatActivity {
                 if (isDarkModeOn){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     buttonModeToggle.setImageResource(R.drawable.dark_mode_btn);
-                    isDarkModeOn = false;
+                    sharedPreferences.edit().putBoolean("darkModeStatus",false).apply();
                 }else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     buttonModeToggle.setImageResource(R.drawable.light_mode_btn);
-                    isDarkModeOn= true;
+                    sharedPreferences.edit().putBoolean("darkModeStatus",true).apply();
                 }
             }
         });
@@ -122,8 +126,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
     public void inet(){
         layout = findViewById(R.id.main_activity_layout);
@@ -134,21 +136,5 @@ public class MainActivity extends AppCompatActivity {
         buttonModeToggle = findViewById(R.id.main_activity_btn_mode_toggle);
 
     }
-
-    public boolean getDarkModeStatus(){
-        int nightModeFlags =
-                MainActivity.this.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-
-        switch (nightModeFlags){
-            case Configuration.UI_MODE_NIGHT_YES:
-                return true;
-            case Configuration.UI_MODE_NIGHT_NO:
-            case Configuration.UI_MODE_NIGHT_UNDEFINED:
-                return false;
-        }
-        return false;
-    }
-
-
 
 }
