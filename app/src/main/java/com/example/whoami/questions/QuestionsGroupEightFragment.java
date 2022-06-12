@@ -1,5 +1,6 @@
 package com.example.whoami.questions;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -48,8 +49,7 @@ public class QuestionsGroupEightFragment extends Fragment {
     SharedPreferences sharedPreferences;
 
     List<String> answers  = new ArrayList<>();
-    ScrollView scrollView;
-    ProgressBar progressBar;
+
     private static final String TAG = "QuestionsGroupEightFrag";
 
     @Override
@@ -66,11 +66,22 @@ public class QuestionsGroupEightFragment extends Fragment {
         animation(view);
         seekBarChange();
 
+        ProgressDialog progressDialog = new ProgressDialog(getContext());
+
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
+
         RetrofitClient.getService().getQuestions()
                 .enqueue(new Callback<QuestionsResponse>() {
                     @Override
                     public void onResponse(Call<QuestionsResponse> call, Response<QuestionsResponse> response) {
+                        if (!response.isSuccessful()){
+                            Toast.makeText(getContext(), "There is a problem just happen", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
+                        }
                         if (response.isSuccessful()&&response.body() != null) {
+
                             QuestionsResponse questionsResponse = response.body();
                             List<Eight> fiveList = questionsResponse.get8();
                             Eight one = fiveList.get(0);
@@ -84,16 +95,14 @@ public class QuestionsGroupEightFragment extends Fragment {
                             Eight five = fiveList.get(4);
                             String questionFive = five.getQuestion();
 
-                            if (questionFive.isEmpty()){
-                                scrollView.setVisibility(View.GONE);
-                            }else {
-                                progressBar.setVisibility(View.GONE);
-                            }
+
                             textViewQuestionOne.setText(questionOne);
                             textViewQuestionTwo.setText(questionTwo);
                             textViewQuestionThree.setText(questionThree);
                             textViewQuestionFour.setText(questionFour);
                             textViewQuestionFive.setText(questionFive);
+
+                            progressDialog.dismiss();
                         }
                     }
 
@@ -107,6 +116,8 @@ public class QuestionsGroupEightFragment extends Fragment {
         pageEightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog.setMessage("Sending Your Answers...");
+                progressDialog.show();
                 answerOne = String.valueOf(seekBarOne.getProgress());
                 answerTwo = String.valueOf(seekBarTWo.getProgress());
                 answerThree = String.valueOf(seekBarThree.getProgress());
@@ -138,7 +149,7 @@ public class QuestionsGroupEightFragment extends Fragment {
                         .enqueue(new Callback<Integer>() {
                             @Override
                             public void onResponse(Call<Integer> call, Response<Integer> response) {
-                                Toast.makeText(getContext(), "sent", Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
                                 Intent intent = new Intent(getContext(),ResultActivity.class);
                                 intent.putExtra("personalityNum",response.body());
                                 startActivity(intent);
@@ -153,9 +164,6 @@ public class QuestionsGroupEightFragment extends Fragment {
 
                         });
 
-
-
-                Toast.makeText(getContext(), "Good Job", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -176,8 +184,7 @@ public class QuestionsGroupEightFragment extends Fragment {
         textViewAnswerThree = view.findViewById(R.id.seek_bar_answer_three_tv);
         textViewAnswerFour = view.findViewById(R.id.seek_bar_answer_four_tv);
         textViewAnswerFive = view.findViewById(R.id.seek_bar_answer_five_tv);
-        scrollView = view.findViewById(R.id.test_page_eight_scroll_layout);
-        progressBar = view.findViewById(R.id.test_page_eight_progress_bar);
+
 
 
 
@@ -185,19 +192,19 @@ public class QuestionsGroupEightFragment extends Fragment {
     }
     public void animation(View view){
         YoYo.with(Techniques.FadeIn)
-                .duration(1000)
+                .duration(1300)
                 .playOn(view.findViewById(R.id.test_page_eight_question_one_card_view));
         YoYo.with(Techniques.FadeIn)
-                .duration(1100)
+                .duration(1500)
                 .playOn(view.findViewById(R.id.test_page_eight_question_two_card_view));
         YoYo.with(Techniques.FadeIn)
-                .duration(1200)
+                .duration(1700)
                 .playOn(view.findViewById(R.id.test_page_eight_question_three_card_view));
         YoYo.with(Techniques.FadeIn)
-                .duration(1300)
+                .duration(1900)
                 .playOn(view.findViewById(R.id.test_page_eight_question_four_card_view));
         YoYo.with(Techniques.FadeIn)
-                .duration(1400)
+                .duration(2000)
                 .playOn(view.findViewById(R.id.test_page_eight_question_five_card_view));
     }
     public void seekBarChange(){

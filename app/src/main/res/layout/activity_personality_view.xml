@@ -1,128 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.PersonalityViewActivity">
-    <RelativeLayout
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/personality_details_toolbar"/>
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/personality_view_image_view"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_200sdp"
+            android:layout_height="wrap_content">
 
-            />
-        <TextView
-            android:id="@+id/personality_view_tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/personality_view_image_view"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:text="@string/personality_name"
-            android:textSize="@dimen/_15ssp"
-            android:textStyle="bold"
-            android:textColor="@color/textColor"/>
-        <TextView
-            android:id="@+id/personality_view_tv_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/personality_view_tv_name"
-            android:text="@string/personality_info"
-            android:textSize="@dimen/_15ssp"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_6sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
-            android:textColor="@color/textColor"/>
-        <TextView
-            android:id="@+id/personality_view_tv_characteristics"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/personality_characteristics"
-            android:layout_below="@+id/personality_view_tv_info"
-            android:layout_marginTop="@dimen/_6sdp"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginBottom="@dimen/_6sdp"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/_15ssp"
-            android:textStyle="bold"/>
-        <TextView
-            android:id="@+id/characteristic_one"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_1"
-            android:layout_below="@+id/personality_view_tv_characteristics"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/_15ssp"/>
-        <TextView
-            android:id="@+id/characteristic_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_2"
-            android:layout_below="@+id/characteristic_one"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/_15ssp"/>
-        <TextView
-            android:id="@+id/characteristic_three"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_3"
-            android:layout_below="@+id/characteristic_two"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/_15ssp"/>
-        <TextView
-            android:id="@+id/characteristic_four"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_4"
-            android:layout_below="@+id/characteristic_three"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/_15ssp"/>
-        <TextView
-            android:id="@+id/characteristic_five"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_5"
-            android:layout_below="@+id/characteristic_four"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/_15ssp"/>
-        <TextView
-            android:id="@+id/characteristic_six"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_6"
-            android:layout_below="@+id/characteristic_five"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
-            android:layout_marginBottom="@dimen/_10sdp"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/_15ssp"/>
-
-
-
-
-
-
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/personality_view_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                />
+            <TextView
+                android:id="@+id/personality_view_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/personality_view_image_view"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/personality_name"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"
+                android:textColor="@color/textColor"/>
+            <TextView
+                android:id="@+id/personality_view_tv_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/personality_view_tv_name"
+                android:text="@string/personality_info"
+                android:textSize="@dimen/_15ssp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:textColor="@color/textColor"/>
+            <TextView
+                android:id="@+id/personality_view_tv_characteristics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/personality_characteristics"
+                android:layout_below="@+id/personality_view_tv_info"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/characteristic_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_1"
+                android:layout_below="@+id/personality_view_tv_characteristics"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_15ssp"/>
+            <TextView
+                android:id="@+id/characteristic_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_2"
+                android:layout_below="@+id/characteristic_one"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_15ssp"/>
+            <TextView
+                android:id="@+id/characteristic_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_3"
+                android:layout_below="@+id/characteristic_two"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_15ssp"/>
+            <TextView
+                android:id="@+id/characteristic_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_4"
+                android:layout_below="@+id/characteristic_three"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_15ssp"/>
+            <TextView
+                android:id="@+id/characteristic_five"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_5"
+                android:layout_below="@+id/characteristic_four"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_15ssp"/>
+            <TextView
+                android:id="@+id/characteristic_six"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_6"
+                android:layout_below="@+id/characteristic_five"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_15ssp"/>
 
 
-</ScrollView>
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</LinearLayout>

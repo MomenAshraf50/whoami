@@ -14,18 +14,22 @@ public class PersonalityViewActivity extends AppCompatActivity {
 
     ImageView imageViewPersonality;
     TextView textViewPersonalityName, textViewPersonalityInfo,textViewCharacteristicOne,textViewCharacteristicTwo
-            ,textViewCharacteristicThree,textViewCharacteristicFour,textViewCharacteristicFive,textViewCharacteristicSix;
-
+            ,textViewCharacteristicThree,textViewCharacteristicFour,textViewCharacteristicFive,textViewCharacteristicSix
+            ,textViewToolBar;
+    ImageButton imageButtonToolBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personality_view);
         inet();
+        textViewToolBar.setText("Personality Details");
+        imageButtonToolBar.setImageResource(R.drawable.ic_baseline_close_24);
         getAndSetData();
 
     }
     public void inet(){
-
+        imageButtonToolBar = findViewById(R.id.back_btn);
+        textViewToolBar = findViewById(R.id.personalities_information_tv);
         imageViewPersonality = findViewById(R.id.personality_view_image_view);
         textViewPersonalityName = findViewById(R.id.personality_view_tv_name);
         textViewPersonalityInfo = findViewById(R.id.personality_view_tv_info);
@@ -35,6 +39,13 @@ public class PersonalityViewActivity extends AppCompatActivity {
         textViewCharacteristicFour = findViewById(R.id.characteristic_four);
         textViewCharacteristicFive = findViewById(R.id.characteristic_five);
         textViewCharacteristicSix = findViewById(R.id.characteristic_six);
+
+        imageButtonToolBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PersonalityViewActivity.this.finish();
+            }
+        });
     }
     public void getAndSetData(){
         if (getIntent()!=null){

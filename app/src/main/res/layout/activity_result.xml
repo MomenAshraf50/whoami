@@ -7,70 +7,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.ResultActivity">
+
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="@dimen/_10sdp"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_30sdp"
-        android:layout_marginBottom="@dimen/_20sdp"
-        android:id="@+id/result_activity_card_view"
-        android:elevation="@dimen/_10sdp">
-        <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_15sdp"
+        app:cardCornerRadius="@dimen/_15sdp"
+        android:elevation="@dimen/_15sdp">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_200sdp"
-            android:id="@+id/result_iv"
-            android:src="@drawable/hysterical"
-            />
+            android:layout_height="match_parent">
+            <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/result_view_pager"
+                android:layout_above="@+id/result_dots_indicator"/>
+            <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                android:id="@+id/result_dots_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_50sdp"
+                app:dotsColor="@color/textColor"
+                app:dotsCornerRadius="@dimen/_6sdp"
+                app:dotsSize="@dimen/_12sdp"
+                app:dotsSpacing="@dimen/_2sdp"
+                app:dotsWidthFactor="2.5"
+                app:selectedDotColor="@color/design_default_color_primary"
+                app:progressMode="false"
+                />
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
 
-    <TextView
-        android:id="@+id/result_personality_tv"
-        android:layout_below="@id/result_activity_card_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="You are: "
-        android:textSize="@dimen/_15ssp"
-        android:layout_centerInParent="true"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/_50sdp"
-        android:textColor="@color/textColor"/>
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Personality Info"
-            android:textAllCaps="false"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/result_get_help_btn"
-            android:layout_marginBottom="@dimen/_20sdp"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:id="@+id/result_personality_info_btn"/>
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Get Help"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/result_personality_info_btn"
-            android:layout_marginBottom="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:id="@+id/result_get_help_btn"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>

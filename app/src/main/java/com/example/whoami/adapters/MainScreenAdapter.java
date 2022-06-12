@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -24,6 +25,9 @@ public class MainScreenAdapter extends PagerAdapter {
     int[] list = {R.drawable.whoami
             , R.drawable.wewilldo
             , R.drawable.start};
+
+
+
     String[] head = {"Who Am I","What will we do?","Let's start"};
     String[] content = {"Welcome to our App, slide to know more."
             ,"In this application, we will ask you 40 questions in order to get to know your personality through these questions."
@@ -32,10 +36,16 @@ public class MainScreenAdapter extends PagerAdapter {
     public MainScreenAdapter(Context context) {
         this.context = context;
     }
+    public MainScreenAdapter(Context context, int[] list, String[] head, String[] content) {
+        this.context = context;
+        this.list = list;
+        this.head = head;
+        this.content = content;
+    }
 
     @Override
     public int getCount() {
-        return 3;
+        return list.length;
     }
 
     @Override
@@ -49,7 +59,7 @@ public class MainScreenAdapter extends PagerAdapter {
     public Object instantiateItem(@NonNull @NotNull ViewGroup container, int position) {
         layoutInflater =(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.slider,container,false);
-        CircleImageView imageView = view.findViewById(R.id.circle_image_view);
+        ImageView imageView = view.findViewById(R.id.circle_image_view);
         TextView textViewHeader = view.findViewById(R.id.slider_tv_head);
         TextView textViewContent = view.findViewById(R.id.slider_tv_content);
 

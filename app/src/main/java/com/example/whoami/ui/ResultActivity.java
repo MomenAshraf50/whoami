@@ -2,6 +2,7 @@ package com.example.whoami.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 
 import com.example.whoami.PersonalityDetails;
 import com.example.whoami.R;
+import com.example.whoami.adapters.MainScreenAdapter;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -31,6 +33,7 @@ import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -43,17 +46,16 @@ public class ResultActivity extends AppCompatActivity {
     private static final String TAG = "ResultActivity";
     int personalityNum ;
     List<PersonalityDetails> personalityDetailsList = new ArrayList<>();
-    TextView textViewPersonalityResult;
-    ImageView imageViewPersonalityImage;
-    Button buttonPersonalityInfo,buttonGetHelp;
+
     int image;
     String personalityInfo,personalityName,personalityCharacteristicOne,personalityCharacteristicTwo
             ,personalityCharacteristicThree,personalityCharacteristicFour,personalityCharacteristicFive
             ,personalityCharacteristicSix;
-    FusedLocationProviderClient fusedLocationProviderClient;
+    ViewPager viewPager;
+   /* FusedLocationProviderClient fusedLocationProviderClient;
     Geocoder geocoder;
     List<Address> addresses;
-    Locale loc = new Locale("en");
+    Locale loc = new Locale("en");*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,17 +63,17 @@ public class ResultActivity extends AppCompatActivity {
         personalityNum = getIntent().getIntExtra("personalityNum",2);
         
 
-        textViewPersonalityResult = findViewById(R.id.result_personality_tv);
+       /* textViewPersonalityResult = findViewById(R.id.result_personality_tv);
         imageViewPersonalityImage = findViewById(R.id.result_iv);
         buttonPersonalityInfo = findViewById(R.id.result_personality_info_btn);
-        buttonGetHelp = findViewById(R.id.result_get_help_btn);
+        buttonGetHelp = findViewById(R.id.result_get_help_btn);*/
 
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+       /* fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);*/
 
         personalityData();
         if (personalityNum== 2){
             getData(0);
-            buttonGetHelp.setVisibility(View.GONE);
+
         }
         if (personalityNum== 3){
             getData(1);
@@ -98,9 +100,8 @@ public class ResultActivity extends AppCompatActivity {
         }
         if (personalityNum== 9){
             getData(7);
-
             }
-        buttonPersonalityInfo.setOnClickListener(new View.OnClickListener() {
+        /*buttonPersonalityInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ResultActivity.this, PersonalityViewActivity.class);
@@ -115,17 +116,17 @@ public class ResultActivity extends AppCompatActivity {
                 intent.putExtra("personalityCharacteristicSix",personalityCharacteristicSix);
                 startActivity(intent);
             }
-        });
+        });*/
 
-        buttonGetHelp.setOnClickListener(new View.OnClickListener() {
+        /*buttonGetHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 askForPermission();
             }
-        });
+        });*/
     }
 
-    private void askForPermission() {
+   /* private void askForPermission() {
         Dexter.withContext(this)
                 .withPermission(Manifest.permission.ACCESS_FINE_LOCATION)
                 .withListener(new PermissionListener() {
@@ -197,7 +198,7 @@ public class ResultActivity extends AppCompatActivity {
 
             }
         });
-    }
+    }*/
 
     public void personalityData(){
         personalityDetailsList.add(new PersonalityDetails(R.drawable.passionate,"Passionate"
@@ -265,7 +266,14 @@ public class ResultActivity extends AppCompatActivity {
                 ,"Not showing sympathy and regret over things."
                 ,"Taking this disorder in a harmful or anti-social direction (behavior modification)."));
 
-
+        personalityDetailsList.add(new PersonalityDetails(R.drawable.natural_personality,"Natural",
+                "Scientists have differed on the interpretation and evaluation of the natural personality and its identification, despite the difference over it, but there is a concept that is common among scientists and individuals, which is that the natural personality means free from psychological and mental disturbances and that enjoys their sound health, and it is the one who enjoys sobriety of mind, emotional stability and activity It is sufficient and a full investment of all its capabilities and is compatible with its environment with all its components and does its best and is not at war with itself or with others, and it is the right person to acquire rights and bear the burden of responsibilities and obligations"
+                ,"Lack of distinction between the heart and the mind, as they are two essential organs.",
+                " Control oneself and desires with sobriety and wisdom.",
+                " Persuasion of any action and before any action.",
+                "He does not consume his mind in what is not useful and does not think in an exaggerated way.",
+                "Everything is given its due, whether it is in anger or joy.",
+                "He looks at every difficult situation with the view of a philosopher, as he learns from every predicament that happens to him."));
 
 
 
@@ -283,7 +291,20 @@ public class ResultActivity extends AppCompatActivity {
         personalityCharacteristicFour = personalityDetails.getPersonalityCharacteristicFour();
         personalityCharacteristicFive = personalityDetails.getPersonalityCharacteristicFive();
         personalityCharacteristicSix = personalityDetails.getPersonalityCharacteristicSix();
-        imageViewPersonalityImage.setImageResource(image);
-        textViewPersonalityResult.append(personalityName);
+
+        viewPager = findViewById(R.id.result_view_pager);
+        int[] imageList = {image,R.drawable.characteristic_one,R.drawable.characteristic_two,R.drawable.characteristic_three
+        ,R.drawable.characteristic_four,R.drawable.characteristic_five,R.drawable.characteristic_six};
+        String[] head = {"You Personality is "+personalityName,"Characteristic One","Characteristic Two","Characteristic Three",
+                "Characteristic Four","Characteristic Five","Characteristic six"};
+        String[] content = {"Slide to know personality characteristics",personalityCharacteristicOne,personalityCharacteristicTwo,
+        personalityCharacteristicThree,personalityCharacteristicFour,personalityCharacteristicFive,personalityCharacteristicSix};
+        MainScreenAdapter adapter = new MainScreenAdapter(ResultActivity.this,imageList,head,content);
+        viewPager.setAdapter(adapter);
+        DotsIndicator dotsIndicator;
+        dotsIndicator = findViewById(R.id.result_dots_indicator);
+        dotsIndicator.setViewPager(viewPager);
+
+
     }
 }

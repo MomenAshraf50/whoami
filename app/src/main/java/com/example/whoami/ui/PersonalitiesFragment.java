@@ -46,6 +46,14 @@ public class PersonalitiesFragment extends Fragment {
     }
 
     public void personalityData(){
+        personalityDetailsList.add(new PersonalityDetails(R.drawable.natural_personality,"Natural",
+                "Scientists have differed on the interpretation and evaluation of the natural personality and its identification, despite the difference over it, but there is a concept that is common among scientists and individuals, which is that the natural personality means free from psychological and mental disturbances and that enjoys their sound health, and it is the one who enjoys sobriety of mind, emotional stability and activity It is sufficient and a full investment of all its capabilities and is compatible with its environment with all its components and does its best and is not at war with itself or with others, and it is the right person to acquire rights and bear the burden of responsibilities and obligations"
+                ,"Lack of distinction between the heart and the mind, as they are two essential organs.",
+                " Control oneself and desires with sobriety and wisdom.",
+                " Persuasion of any action and before any action.",
+                "He does not consume his mind in what is not useful and does not think in an exaggerated way.",
+                "Everything is given its due, whether it is in anger or joy.",
+                "He looks at every difficult situation with the view of a philosopher, as he learns from every predicament that happens to him."));
         personalityDetailsList.add(new PersonalityDetails(R.drawable.psychopathic,"Psychopathic",
                 "It is an anti-social personality, any person who shows patterns of manipulation and violation of others, which contradicts this behavior with the rules and behaviors of society, and he is a person with a mental illness called “psychopathy” but does not adopt the official diagnosis, some people develop psychopathy when 18 years old, but some signs of behavioral disorder appear since childhood, and the cause of psychopathy is gender, which males are more susceptible to this disease and be genetics, behavioral disorder, exposure to trauma, or unstable childhood.",
                 "Have a high level of intelligence."

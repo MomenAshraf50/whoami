@@ -1,5 +1,6 @@
 package com.example.whoami.questions;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -50,8 +51,7 @@ public class QuestionsGroupSixFragment extends Fragment {
     TextView textViewQuestionOne,textViewQuestionTwo,textViewQuestionThree,textViewQuestionFour
             ,textViewQuestionFive;
     SharedPreferences sharedPreferences;
-    ScrollView scrollView;
-    ProgressBar progressBar;
+
     private static final String TAG = "QuestionsGroupSixFragme";
 
     @Override
@@ -69,12 +69,24 @@ public class QuestionsGroupSixFragment extends Fragment {
         inet(view);
         animation(view);
 
+        ProgressDialog progressDialog = new ProgressDialog(getContext());
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
 
         RetrofitClient.getService().getQuestions()
                 .enqueue(new Callback<QuestionsResponse>() {
                     @Override
                     public void onResponse(Call<QuestionsResponse> call, Response<QuestionsResponse> response) {
+
+                        if (!response.isSuccessful()){
+                            Toast.makeText(getContext(), "There is a problem just happen", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
+                        }
+
                         if (response.isSuccessful()&&response.body()!=null){
+
+
                             QuestionsResponse questionsResponse = response.body();
                             List<Six> sixList =questionsResponse.get6();
                             Six one = sixList.get(0);
@@ -88,17 +100,13 @@ public class QuestionsGroupSixFragment extends Fragment {
                             Six five = sixList.get(4);
                             String questionFive = five.getQuestion();
 
-                            if (questionFive.isEmpty()){
-                                scrollView.setVisibility(View.GONE);
-                            }else {
-                                progressBar.setVisibility(View.GONE);
-                            }
                             textViewQuestionOne.setText(questionOne);
                             textViewQuestionTwo.setText(questionTwo);
                             textViewQuestionThree.setText(questionThree);
                             textViewQuestionFour.setText(questionFour);
                             textViewQuestionFive.setText(questionFive);
 
+                            progressDialog.dismiss();
 
                         }
                     }
@@ -177,27 +185,26 @@ public class QuestionsGroupSixFragment extends Fragment {
         radioGroupAnswerThree = view.findViewById(R.id.test_page_six_choices_three);
         radioGroupAnswerFour = view.findViewById(R.id.test_page_six_choices_four);
         radioGroupAnswerFive = view.findViewById(R.id.test_page_six_choices_five);
-        scrollView = view.findViewById(R.id.test_page_six_scroll_layout);
-        progressBar = view.findViewById(R.id.test_page_six_progress_bar);
+
 
 
 
     }
     public void animation(View view){
         YoYo.with(Techniques.FadeIn)
-                .duration(1000)
+                .duration(1300)
                 .playOn(view.findViewById(R.id.test_page_six_question_one_card_view));
         YoYo.with(Techniques.FadeIn)
-                .duration(1100)
+                .duration(1500)
                 .playOn(view.findViewById(R.id.test_page_six_question_two_card_view));
         YoYo.with(Techniques.FadeIn)
-                .duration(1200)
+                .duration(1700)
                 .playOn(view.findViewById(R.id.test_page_six_question_three_card_view));
         YoYo.with(Techniques.FadeIn)
-                .duration(1300)
+                .duration(1900)
                 .playOn(view.findViewById(R.id.test_page_six_question_four_card_view));
         YoYo.with(Techniques.FadeIn)
-                .duration(1400)
+                .duration(2000)
                 .playOn(view.findViewById(R.id.test_page_six_question_five_card_view));
     }
 

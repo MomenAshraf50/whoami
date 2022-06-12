@@ -1,5 +1,7 @@
 package com.example.whoami.questions;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -29,11 +31,13 @@ import com.example.whoami.api.One;
 import com.example.whoami.api.QuestionsResponse;
 import com.example.whoami.api.RetrofitClient;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import org.jetbrains.annotations.NotNull;
 
 
 import java.util.List;
+import java.util.TimerTask;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -52,8 +56,6 @@ public class QuestionsGroupOneFragment extends Fragment {
             ,textViewQuestionFive;
     
     SharedPreferences sharedPreferences;
-    CardView cardViewOne,cardViewTwo,cardViewThree,cardViewFour,cardViewFive;
-    ProgressBar progressBar;
 
     private static final String TAG = "QuestionsGroupOneFragme";
 
@@ -71,16 +73,21 @@ public class QuestionsGroupOneFragment extends Fragment {
 
         inet(view);
         animation(view);
+        ProgressDialog progressDialog = new ProgressDialog(getContext());
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
         RetrofitClient.getService().getQuestions()
                 .enqueue(new Callback<QuestionsResponse>() {
                     @Override
                     public void onResponse(Call<QuestionsResponse> call, Response<QuestionsResponse> response) {
-                       /* if (!response.isSuccessful()){
-
-                            pageOneButton.setClickable(false);
-                        }*/
+                      if (!response.isSuccessful()){
+                          Toast.makeText(getContext(), "There is a problem just happen", Toast.LENGTH_SHORT).show();
+                          progressDialog.dismiss();
+                        }
 
                         if (response.isSuccessful()&&response.body()!=null){
+
                             QuestionsResponse questionsResponse = response.body();
                             List<One> oneList =questionsResponse.get1();
                             One one = oneList.get(0);
@@ -98,13 +105,7 @@ public class QuestionsGroupOneFragment extends Fragment {
                             textViewQuestionThree.setText(questionThree);
                             textViewQuestionFour.setText(questionFour);
                             textViewQuestionFive.setText(questionFive);
-                            progressBar.setVisibility(View.GONE);
-                            cardViewOne.setVisibility(View.VISIBLE);
-                            cardViewTwo.setVisibility(View.VISIBLE);
-                            cardViewThree.setVisibility(View.VISIBLE);
-                            cardViewFour.setVisibility(View.VISIBLE);
-                            cardViewFive.setVisibility(View.VISIBLE);
-
+                            progressDialog.dismiss();
 
 
                         }
@@ -196,31 +197,25 @@ public class QuestionsGroupOneFragment extends Fragment {
         radioGroupAnswerThree = view.findViewById(R.id.test_page_one_choices_three);
         radioGroupAnswerFour = view.findViewById(R.id.test_page_one_choices_four);
         radioGroupAnswerFive = view.findViewById(R.id.test_page_one_choices_five);
-        progressBar = view.findViewById(R.id.test_page_one_progress_bar);
-        cardViewOne= view.findViewById(R.id.test_page_one_question_one_card_view);
-        cardViewTwo= view.findViewById(R.id.test_page_one_question_two_card_view);
-        cardViewThree= view.findViewById(R.id.test_page_one_question_three_card_view);
-        cardViewFour= view.findViewById(R.id.test_page_one_question_four_card_view);
-        cardViewFive= view.findViewById(R.id.test_page_one_question_five_card_view);
 
 
 
     }
     public void animation(View view){
         YoYo.with(Techniques.FadeIn)
-                .duration(1000)
+                .duration(1300)
                 .playOn(view.findViewById(R.id.test_page_one_question_one_card_view));
         YoYo.with(Techniques.FadeIn)
-                .duration(1100)
+                .duration(1500)
                 .playOn(view.findViewById(R.id.test_page_one_question_two_card_view));
         YoYo.with(Techniques.FadeIn)
-                .duration(1200)
+                .duration(1700)
                 .playOn(view.findViewById(R.id.test_page_one_question_three_card_view));
         YoYo.with(Techniques.FadeIn)
-                .duration(1300)
+                .duration(1900)
                 .playOn(view.findViewById(R.id.test_page_one_question_four_card_view));
         YoYo.with(Techniques.FadeIn)
-                .duration(1400)
+                .duration(2000)
                 .playOn(view.findViewById(R.id.test_page_one_question_five_card_view));
     }
 
