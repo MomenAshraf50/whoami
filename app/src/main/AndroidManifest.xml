@@ -15,7 +15,6 @@
         android:roundIcon="@drawable/whoami"
         android:supportsRtl="true"
         android:theme="@style/Theme.WhoAmI">
-        <activity android:name=".ui.NearestDoctorActivity"></activity>
         <activity
             android:name=".ui.ResultActivity"
             android:exported="true">
