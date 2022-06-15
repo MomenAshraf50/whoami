@@ -1,6 +1,8 @@
 package com.example.whoami.questions;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -56,7 +58,18 @@ public class StartTestFragment extends Fragment {
                     return;
                 }
                 int ageNum = Integer.parseInt(age);
-                if (ageNum > 100){
+                if(ageNum < 18){
+                    new AlertDialog.Builder(getContext())
+                            .setMessage("Sorry this test is designed for people over the age of 18")
+                    .setPositiveButton("I understand", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    }).setCancelable(true).show();
+                    return;
+                }
+                if (ageNum > 80){
                     editTextAge.setError("Please, Enter a valid age");
                     YoYo.with(Techniques.Shake).duration(1000).playOn(editTextAge);
                     return;

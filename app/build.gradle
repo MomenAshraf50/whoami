@@ -52,6 +52,7 @@ dependencies {
     implementation 'com.daimajia.androidanimations:library:2.4@aar'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
     implementation 'com.karumi:dexter:6.2.3'
+    implementation 'androidx.multidex:multidex:2.0.1'
 
 
 

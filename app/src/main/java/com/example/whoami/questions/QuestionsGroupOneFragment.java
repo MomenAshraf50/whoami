@@ -3,12 +3,15 @@ package com.example.whoami.questions;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
+
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -17,7 +20,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
+import android.widget.ImageView;
+
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
@@ -31,13 +35,14 @@ import com.example.whoami.api.One;
 import com.example.whoami.api.QuestionsResponse;
 import com.example.whoami.api.RetrofitClient;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import org.jetbrains.annotations.NotNull;
 
 
 import java.util.List;
-import java.util.TimerTask;
+import android.content.Context;
+import androidx.multidex.MultiDex;
+import androidx.multidex.MultiDexApplication;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -53,9 +58,11 @@ public class QuestionsGroupOneFragment extends Fragment {
     String answerOne,answerTwo,answerThree,answerFour,answerFive;
     FloatingActionButton pageOneButton;
     TextView textViewQuestionOne,textViewQuestionTwo,textViewQuestionThree,textViewQuestionFour
-            ,textViewQuestionFive;
-    
+            ,textViewQuestionFive,textViewError;
+    ImageView imageViewError;
+    ScrollView scrollViewPageOne;
     SharedPreferences sharedPreferences;
+    ProgressDialog progressDialog;
 
     private static final String TAG = "QuestionsGroupOneFragme";
 
@@ -68,21 +75,27 @@ public class QuestionsGroupOneFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        MultiDex.install(requireContext());
         super.onViewCreated(view, savedInstanceState);
         NavController navController = Navigation.findNavController(view);
 
         inet(view);
         animation(view);
-        ProgressDialog progressDialog = new ProgressDialog(getContext());
+
+        progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("Loading...");
         progressDialog.setCancelable(false);
         progressDialog.show();
+        checkInternetConnection();
         RetrofitClient.getService().getQuestions()
                 .enqueue(new Callback<QuestionsResponse>() {
                     @Override
                     public void onResponse(Call<QuestionsResponse> call, Response<QuestionsResponse> response) {
                       if (!response.isSuccessful()){
-                          Toast.makeText(getContext(), "There is a problem just happen", Toast.LENGTH_SHORT).show();
+                          imageViewError.setVisibility(View.VISIBLE);
+                          textViewError.setVisibility(View.VISIBLE);
+                          scrollViewPageOne.setVisibility(View.GONE);
+                          pageOneButton.setClickable(false);
                           progressDialog.dismiss();
                         }
 
@@ -185,6 +198,28 @@ public class QuestionsGroupOneFragment extends Fragment {
         });
 
     }
+
+    private void checkInternetConnection() {
+        ConnectivityManager connectivityManager = (ConnectivityManager)requireContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo info = connectivityManager.getActiveNetworkInfo();
+        if (info == null || !info.isConnected()) {
+            imageViewError.setVisibility(View.VISIBLE);
+            textViewError.setVisibility(View.VISIBLE);
+            scrollViewPageOne.setVisibility(View.GONE);
+            pageOneButton.setVisibility(View.GONE);
+            progressDialog.dismiss();
+            new AlertDialog.Builder(getContext()).setCancelable(true)
+                    .setMessage("Check your Internet Connection")
+                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    }).show();
+        }
+
+    }
+
     public void inet(View view){
         pageOneButton = view.findViewById(R.id.test_page_one_floating_btn);
         textViewQuestionOne = view.findViewById(R.id.test_page_one_question_one);
@@ -197,6 +232,9 @@ public class QuestionsGroupOneFragment extends Fragment {
         radioGroupAnswerThree = view.findViewById(R.id.test_page_one_choices_three);
         radioGroupAnswerFour = view.findViewById(R.id.test_page_one_choices_four);
         radioGroupAnswerFive = view.findViewById(R.id.test_page_one_choices_five);
+        textViewError = view.findViewById(R.id.connect_to_server_error_tv);
+        imageViewError = view.findViewById(R.id.connect_to_server_error_iv);
+        scrollViewPageOne = view.findViewById(R.id.test_page_one_scroll_layout);
 
 
 
